@@ -5,7 +5,7 @@ class Footer extends React.Component {
     render() {
         return (
             <>
-                <h1>This is the Footer</h1>
+                <h1>Celestiality&trade;</h1>
             </>
         )
     }
