@@ -6,8 +6,10 @@ class JournalEntry extends React.Component {
   render() {
     return (
       <>
+      <h1>this is journaEntry</h1>
         <Form>
-          <Form.Title>Your Journal Entry! </Form.Title>
+          {/* <Form.Title>Your Journal Entry!</Form.Title> */}
+
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Name</Form.Label>
             <Form.Control type="name" placeholder="Enter Name" />

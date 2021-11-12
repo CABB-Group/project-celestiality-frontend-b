@@ -23,7 +23,7 @@ class Main extends React.Component {
             <Astrological username={this.state.username} />
           </Row>
         </Col>
-        <Col>
+        <Col> 
           <Row>
             <JournalEntry username={this.state.username} journalentry={this.state.journalentry} />
           </Row>
