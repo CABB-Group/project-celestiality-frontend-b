@@ -15,20 +15,20 @@ class Header extends React.Component {
             Celestiality
         </Navbar.Brand>
         <NavItem style={{ backgroundColor: "#f3a712" }}>
-          {/* <Link to="/" className="nav-link">
+          <Link to="/" className="nav-link">
             Home
-          </Link> */}
+          </Link>
         </NavItem>
         
         <NavItem style={{ backgroundColor: "#f3a712" }}>
-          {/* <Link to="/aboutus" className="nav-link">
+          <Link to="/aboutus" className="nav-link">
             About Us
-          </Link> */}
+          </Link>
         </NavItem>
         <NavItem style={{ backgroundColor: "#f3a712" }}>
-          {/* <Link to="/journalentries" className="nav-link">
+          <Link to="/journalentries" className="nav-link">
             Journal Entries
-          </Link> */}
+          </Link>
         </NavItem>
 
       </Navbar>
