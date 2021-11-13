@@ -39,6 +39,7 @@ class App extends React.Component {
               : <Login onLoginSubmit={this.loginHandler} handleFormInput={this.formInputHandler}/>}>
             </Route>
           </Routes>
+
           <Footer />
         </Router>
       </>
