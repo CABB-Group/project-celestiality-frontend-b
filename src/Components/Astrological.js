@@ -6,6 +6,7 @@ import HoroScope from './HoroScope.js';
 import HistoricalDates from './HistoricalDates.js';
 import Celebrity from './Celebrity.js';
 import ChineseZodiac from "./ChineseZodiac.js";
+import JournalEntry from "./JournalEntry.js";
 
 class Astrological extends React.Component {
   constructor(props) {
@@ -50,6 +51,11 @@ class Astrological extends React.Component {
         <Row>
           <Col>
             <Celebrity celebrity={this.state.celebrity} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <JournalEntry journalentry={this.state.journalentry} username={this.state.username} />
           </Col>
         </Row>
       </>

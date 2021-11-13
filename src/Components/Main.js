@@ -4,6 +4,7 @@ import Astrological from "./Astrological.js";
 import JournalEntry from './JournalEntry.js';
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Col, Row } from 'react-bootstrap';
+import BirthDate from '../LoginComponents/BirthDate.js';
 
 class Main extends React.Component {
   constructor(props) {
@@ -12,27 +13,33 @@ class Main extends React.Component {
       username: "",
       journalentry: {},
       journalentries: [],
+      showModal: true
     };
   }
+
+  handleSubmit = () => {
+      this.setState({
+          showModal: true
+      })
+  }
+
   render() {
     return (
       <>
-
-        <Col>
-          <Row>
-            <Astrological username={this.state.username} />
-          </Row>
-        </Col>
-        <Col> 
-          <Row>
-            <JournalEntry username={this.state.username} journalentry={this.state.journalentry} />
-          </Row>
-        </Col>
-
+        <Row>
+          <Col>
+            {this.state.showModal ? <BirthDate handleSubmit={this.handleSubmit} showModal={this.showModal} /> : (
+            <Astrological username={this.state.username} journalentry={this.state.journalentry} />)}
+          </Col>
+        </Row>
+        
       </>
 
 
     );
   }
 }
+
+// (<JournalEntry username={this.state.username} journalentry={this.state.journalentry} />)}
+
 export default Main;
