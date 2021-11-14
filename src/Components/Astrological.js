@@ -50,11 +50,11 @@ class Astrological extends React.Component {
 
   handleDelete = async (journalToDelete) => {
     console.log(journalToDelete);
-    const server = `${process.env.REACT_APP_SERVER}/journal/${journalToDelete._id}`;
+    const server = `${process.env.REACT_APP_SERVER}/journal/${journalToDelete}`;
     console.log(server);
     try {
       await axios.delete(server);
-      const journals = this.state.books.filter((candidate) => candidate._id !== journalToDelete._id);
+      const journals = this.state.journals.filter((candidate) => candidate._id !== journalToDelete);
       this.setState({ journals: journals });
       alert(journalToDelete.name + " was deleted");
     } catch (e) {
