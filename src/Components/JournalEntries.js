@@ -12,8 +12,8 @@ class JournalEntries extends React.Component {
           <h3>{this.props.name}</h3>
           <p>{this.props.description}</p>
           <p>{this.props.date}</p>
-          <Button variant="warning" onClick={() => this.props.handleDelete(this.props.book)}>Delete Book</Button>
-          <Button variant="info" onClick={() => this.props.handleUpdate(this.props.book)}>Update Book</Button>
+          <Button variant="warning" onClick={() => this.props.handleDelete(this.props.book)}>Delete Journal</Button>
+          <Button variant="info" onClick={() => this.props.handleUpdate(this.props.book)}>Update Journal</Button>
         </Carousel.Caption>
       </>
     );
