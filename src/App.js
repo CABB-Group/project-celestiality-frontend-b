@@ -12,33 +12,58 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user:null
+      loginComplete: false,
+      birthDateEntered: false,
+      userInfo: {
+        username: '',
+        email: '',
+        userBirthDate: ''
+      }
     };
   }
 
   loginHandler = (user, event) => {
     event.preventDefault();
     this.setState({
-      user,
+      userInfo: {
+        username: user.username,
+        email: user.email
+      },
+      loginComplete: true
+      
     });
   };
+
+  setBirthDay = (birthDate) => {
+    this.setState({
+      userInfo: {
+        username: this.state.userInfo.username,
+        email: this.state.userInfo.email,
+        userBirthDate: birthDate
+      },
+      birthDateEntered: true
+    })
+  }
 
   logoutHandler = () => {
     this.setState({
-      user: null,
+      userInfo: {},
     });
   };
 
+
+
   render() {
+    console.log('App.js state: ', this.state)
     return (
       <>
 
         <Router>
           <Header user={this.state.user} onLogout={this.logoutHandler} />
           <Routes>
-            <Route exact path="/" element={ this.state.user ? 
-              <Main /> 
-              : <Login onLoginSubmit={this.loginHandler} handleFormInput={this.formInputHandler}/>}>
+            <Route exact path="/" element={this.state.loginComplete ?
+              <Main setBirthDay={this.setBirthDay} userInfo={this.state.userInfo} birthDateEntered={this.state.birthDateEntered}/>
+              : <Login loginHandler={this.loginHandler} />}>
             </Route>
             <Route path='/aboutus' element={
               <AboutUs />
