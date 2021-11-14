@@ -11,6 +11,7 @@ import JournalEntries from './JournalEntries';
 import axios from 'axios';
 import { Carousel } from "react-bootstrap";
 import UpdateJournal from "./UpdateJournal.js";
+import AddJournalButton from './AddJournalButton.js';
 
 
 class Astrological extends React.Component {
@@ -42,25 +43,24 @@ class Astrological extends React.Component {
     const server = `${process.env.REACT_APP_SERVER}/journal`;
     const response = await axios.post(server, journalInfo);
     const newJournal = response.data;
-    const journals = [...this.state.journal, newJournal];
+    const journals = [...this.state.journals, newJournal];
     this.setState({journals: journals})
   }
 
-  handleDelete = async (journalToDelete) => {
-      const server = `${process.env.REACT_APP_SERVER}/journal/${journalToDelete._id}`;
-
-      try {
-        await axios.delete(server);
-        const journals = this.state.journals.filter(candidate => candidate._id !== journalToDelete._id);
-        this.setState({journals: journals});
-        alert(journalToDelete.name + `'s journal was deleted`);
-      } catch(e) {
-        console.log('error');
-      }
-  };
+  handleDelete = async id => 
+  {try {
+    await axios.delete(`${process.env.REACT_APP_SERVER}/items/${id}`);
+    const deleteItems = this.state.items.filter(item => item._id !== id);
+    this.setState({
+      journals: deleteItems
+    })
+  } catch (error) {
+    console.error(error);
+  }
+}
 
   handleUpdate = async (journalToUpdate) => {
-    const url= `${process.env.REACT_APP_SERVER}/journals/${journalToUpdate._id}`;
+    const url= `${process.env.REACT_APP_SERVER}/journal/${journalToUpdate._id}`;
     try {
         const res = await axios.put(url, journalToUpdate);
         const updatedJournal = res.data;
@@ -122,7 +122,6 @@ class Astrological extends React.Component {
         </Row>
         <Row>
           <Col>
-            {this.state.journalentry ? <JournalEntries /> : (<JournalEntry handleCreate={this.props.handleCreate}/>)}
           {this.state.journals.length ? (
           <Carousel>
           {this.state.journals.map(journal => {
@@ -138,7 +137,13 @@ class Astrological extends React.Component {
                 </Carousel.Item>
               );
           })}
-          </Carousel>) : (<h3>You have no Journal Entries</h3>)}
+          </Carousel>) : <h3>there are no journals!</h3>}
+          {this.state.showjournalentry ? (
+            <JournalEntry handleCreate={this.props.handleCreate} />) : (
+              <AddJournalButton onButtonClick= {this.showJournalEntry} />
+            )
+
+          }
           </Col>
           <UpdateJournal 
             updateJournalState={this.updateJournalState}
