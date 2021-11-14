@@ -5,6 +5,8 @@ import Footer from './Components/Footer';
 import Main from './Components/Main';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './LoginComponents/Login.js';
+import AboutUs from './Components/AboutUs.js';
+import JournalEntries from './Components/JournalEntries';
 
 class App extends React.Component {
   constructor(props) {
@@ -38,6 +40,13 @@ class App extends React.Component {
               <Main /> 
               : <Login onLoginSubmit={this.loginHandler} handleFormInput={this.formInputHandler}/>}>
             </Route>
+            <Route path='/aboutus' element={
+              <AboutUs />
+            }>
+            </Route>
+            <Route path='/journalentries' element={
+              <JournalEntries />
+            } />
           </Routes>
 
           <Footer />

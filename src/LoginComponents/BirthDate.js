@@ -4,13 +4,15 @@ import Button from "react-bootstrap/Button";
 import { Modal } from "react-bootstrap";
 
 class BirthDate extends React.Component {
-  handleSubmit = () => {
-    this.props.handleSubmit();
+  handleSubmit = (e) => {
+    console.log('BirthDate level handleSubmit');
+    e.preventDefault();
+    this.props.handleSubmit(e);
   };
 
   render() {
     return (
-      <Modal.Dialog showModal={this.props.showModal}>
+      <Modal.Dialog showmodal={this.props.showmodal}>
         <Modal.Header>
           <Modal.Title>Modal title</Modal.Title>
         </Modal.Header>
@@ -18,10 +20,10 @@ class BirthDate extends React.Component {
         <Modal.Body>
           <Form onSubmit={this.handleSubmit}>
           <Form.Group className="mb-3" controlId="birthDateDescription">
-            <Form.Label>Description</Form.Label>
+            <Form.Label>Enter Your Birthday Here: </Form.Label>
             <Form.Control
-              type="name"
-              placeholder="Enter Book Description"
+              type="date"
+              placeholder="Enter Your Birthday Here!"
             ></Form.Control>
           </Form.Group>
           </Form>
