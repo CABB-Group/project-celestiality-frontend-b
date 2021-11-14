@@ -4,13 +4,21 @@ import Button from "react-bootstrap/Button";
 import { Modal } from "react-bootstrap";
 
 class BirthDate extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={
+      birthDate:'empty'
+    }
+  }
   handleSubmit = (e) => {
-    console.log('BirthDate level handleSubmit');
+    // console.log('BirthDate level handleSubmit', e);
     e.preventDefault();
-    this.props.handleSubmit(e);
+    this.props.setBirthDay(this.state.birthDate);
+    this.props.changeBirthdayModal(false);
   };
 
   render() {
+    // console.log('birthDate state: ', this.state)
     return (
       <Modal.Dialog showmodal={this.props.showmodal}>
         <Modal.Header>
@@ -18,10 +26,10 @@ class BirthDate extends React.Component {
         </Modal.Header>
 
         <Modal.Body>
-          <Form onSubmit={this.handleSubmit}>
+          <Form >
           <Form.Group className="mb-3" controlId="birthDateDescription">
             <Form.Label>Enter Your Birthday Here: </Form.Label>
-            <Form.Control
+            <Form.Control onChange={(e)=> this.setState({birthDate: e.target.value})}
               type="date"
               placeholder="Enter Your Birthday Here!"
             ></Form.Control>
@@ -41,23 +49,3 @@ class BirthDate extends React.Component {
 
 export default BirthDate;
 
-{
-  /* <Modal.Dialog>
-  <Modal.Header>
-    <Modal.Title>Welcome Celestial!</Modal.Title>
-  </Modal.Header>
-
-  <Modal.Body>
-  <Modal.Text>
-    <Form>
-          <Form.Control type="date" placeholder="Please Enter Your Birthdate!" />
-          </Form>
-  </Modal.Text>
-  </Modal.Body>
-
-  <Modal.Footer>
-    
-    <Button variant="primary">Submit</Button>
-  </Modal.Footer>
-</Modal.Dialog> */
-}

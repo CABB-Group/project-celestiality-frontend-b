@@ -27,7 +27,7 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <Form onSubmit={ (event) => this.props.onLoginSubmit({username: this.state.username, email: this.state.email}, event)}>
+      <Form onSubmit={ (event) => this.props.loginHandler({username: this.state.username, email: this.state.email}, event)}>
         <Form.Group className="mb-3" controlId="formEmail">
           <Form.Label>Email</Form.Label>
           <Form.Control onChange={this.formInputHandler} type="email" placeholder="Enter email" />

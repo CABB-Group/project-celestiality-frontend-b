@@ -30,7 +30,9 @@ class Login extends React.Component {
             <Card.Text>
               Click Below to Log In
             </Card.Text>
-            {this.state.showForm ? <LoginForm onLoginSubmit={this.props.onLoginSubmit}/> : <LoginButton onButtonClick={this.showFormHandler} />}
+            {this.state.showForm ?
+              <LoginForm loginHandler={this.props.loginHandler} />
+              : <LoginButton onButtonClick={this.showFormHandler} />}
           </Card.Body>
         </Card>
       </>

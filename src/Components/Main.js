@@ -10,18 +10,16 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
       showmodal: true,
-      
     };
   }
 
-  handleSubmit = (e) => {
-      console.log('Main handle submit: ');
-      e.preventDefault();
-      this.setState({
-          showmodal: false
-      })
+  changeBirthdayModal = (element) => {
+    // console.log('Main handle submit: ', element);
+    // e.preventDefault();
+    this.setState({
+      showmodal: element
+    })
   }
 
 
@@ -30,12 +28,17 @@ class Main extends React.Component {
       <>
         <Row>
           <Col>
-            {this.state.showmodal ? <BirthDate handleSubmit={this.handleSubmit} showModal={this.state.showmodal} /> : (
-            <Astrological username={this.state.username} />)}
-          
+            {this.state.showmodal ?
+              <BirthDate
+                changeBirthdayModal={this.changeBirthdayModal}
+                showModal={this.state.showmodal}
+                setBirthDay={this.props.setBirthDay} />
+              : <Astrological
+                userInfo={this.props.userInfo} />}
+
           </Col>
         </Row>
-        
+
       </>
 
 
