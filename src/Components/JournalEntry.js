@@ -3,38 +3,48 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 class JournalEntry extends React.Component {
-  handleCreate = (e) => {
-    console.log('BirthDate level handleSubmit');
-    e.preventDefault();
-    const journalInfo = {
-      name: e.target.formBasicName.value,
-      date: e.target.formDate.value,
-      description: e.target.formDescription.value
-    }
-    this.props.handleCreate(journalInfo);
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      description: '',
+      date: '',
+    };
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    let createdJournal = {
+      name: this.state.name,
+      description: this.state.description,
+      date: this.state.date,
+    };
+    console.log(this.state);
+
+    this.props.handleCreate(createdJournal);
+  }
 
   render() {
     return (
       <>
       <h1>this is journalEntry</h1>
-        <Form handleSubmit={this.handleCreate}>
+        <Form handleSubmit={this.onCreate}>
           {/* <Form.Title>Your Journal Entry!</Form.Title> */}
 
           <Form.Group className="mb-3" controlId="formBasicName">
             <Form.Label>Name</Form.Label>
-            <Form.Control type="name" placeholder="Enter Name" />
+            <Form.Control type="name" placeholder="Enter Name" onChange={(event) => this.setState({ name: event.target.value })}/>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formDate">
             <Form.Label>Date</Form.Label>
-            <Form.Control type="date" placeholder="Enter Date" />
+            <Form.Control type="date" placeholder="Enter Date" onChange={(event) => this.setState({ date: event.target.value })}/>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formDescription">
             <Form.Label>Description</Form.Label>
-          <Form.Control type="description" placeholder="Enter Your Description! It can be anything" />
+          <Form.Control type="description" placeholder="Enter Your Description! It can be anything" onChange={(event) => this.setState({ description: event.target.value })} />
             </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" onClick={(event) => this.handleSubmit(event)}>
             Submit
           </Button>
         </Form>

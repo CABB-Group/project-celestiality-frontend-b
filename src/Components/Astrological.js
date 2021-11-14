@@ -9,7 +9,6 @@ import ChineseZodiac from "./ChineseZodiac.js";
 import JournalEntry from "./JournalEntry.js";
 import JournalEntries from './JournalEntries';
 import axios from 'axios';
-import { Carousel } from "react-bootstrap";
 import UpdateJournal from "./UpdateJournal.js";
 import AddJournalButton from './AddJournalButton.js';
 
@@ -49,17 +48,19 @@ class Astrological extends React.Component {
     this.setState({ journals: journals })
   }
 
-  handleDelete = async id => {
+  handleDelete = async (journalToDelete) => {
+    console.log(journalToDelete);
+    const server = `${process.env.REACT_APP_SERVER}/journal/${journalToDelete._id}`;
+    console.log(server);
     try {
-      await axios.delete(`${process.env.REACT_APP_SERVER}/items/${id}`);
-      const deleteItems = this.state.items.filter(item => item._id !== id);
-      this.setState({
-        journals: deleteItems
-      })
-    } catch (error) {
-      console.error(error);
+      await axios.delete(server);
+      const journals = this.state.books.filter((candidate) => candidate._id !== journalToDelete._id);
+      this.setState({ journals: journals });
+      alert(journalToDelete.name + " was deleted");
+    } catch (e) {
+      console.log("error");
     }
-  }
+  };
 
   handleUpdate = async (journalToUpdate) => {
     const url = `${process.env.REACT_APP_SERVER}/journal/${journalToUpdate._id}`;
@@ -145,29 +146,14 @@ class Astrological extends React.Component {
         <section style={{ width: '50%', display: 'inline-block' }}>
           <Row>
             <Col>
-              {this.state.journals.length ? (
-                <Carousel>
-                  {this.state.journals.map(journal => {
-                    return (
-                      <Carousel.Item key={journal._id}>
-                        <JournalEntries
-                          handleUpdate={this.handleUpdate}
-                          name={journal.name}
-                          description={journal.description}
-                          date={journal.date}
-                          handleDelete={this.handleDelete}
-                          journal={journal}></JournalEntries>
-                      </Carousel.Item>
-                    );
-                  })}
-                </Carousel>) : <h3>there are no journals!</h3>}
               {this.state.showjournalentry ? (
-                <JournalEntry handleCreate={this.props.handleCreate} />) : (
+                <JournalEntry handleCreate={this.handleCreate} />) : (
                 <AddJournalButton onButtonClick={this.showJournalEntry} />
               )
 
               }
             </Col>
+            {this.state.showjournalentry ? <JournalEntries journals= {this.state.journals} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} /> : <h3>there are no journals!</h3>}
             <UpdateJournal
               updateJournalState={this.updateJournalState}
               updateJournal={this.state.updatedjournal}
