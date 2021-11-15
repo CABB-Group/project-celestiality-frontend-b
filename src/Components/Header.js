@@ -35,7 +35,7 @@ class Header extends React.Component {
           </Link>
         </NavItem>
         <NavItem style={{ backgroundColor: "#f3a712" }}>
-          <Link to="/journalentries" className="nav-link">
+          <Link to="/pastjournals" className="nav-link">
             Journal Entries
           </Link>
         </NavItem>

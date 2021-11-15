@@ -9,9 +9,9 @@ class UpdateJournal extends React.Component {
 
     const updatedObj = {
       _id: this.props.updateJournal._id,
-      title: ev.target.journalName.value,
+      name: ev.target.journalName.value,
       description: ev.target.journalDescription.value,
-      email: ev.target.journalDate.value,
+      date: ev.target.journalDate.value,
     };
 
     this.props.handleUpdate(updatedObj);
@@ -51,7 +51,7 @@ class UpdateJournal extends React.Component {
                 <Form.Control
                   type='date'
                   placeholder='Enter the Date'
-                  defaultValue={this.props.updateJournal.email}
+                  defaultValue={this.props.updateJournal.date}
                 ></Form.Control>
               </Form.Group>
               <Button type='Submit'>Submit</Button>
