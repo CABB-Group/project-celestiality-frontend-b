@@ -29,7 +29,6 @@ class Astrological extends React.Component {
       showupdatejournal: false,
       updatedjournal: "",
       journalentry: false,
-      journals: [],
     };
   }
 
@@ -40,60 +39,10 @@ class Astrological extends React.Component {
     });
   };
 
-  handleCreate = async (journalInfo) => {
-    const server = `${process.env.REACT_APP_SERVER}/journal`;
-    const response = await axios.post(server, journalInfo);
-    const newJournal = response.data;
-    const journals = [...this.state.journals, newJournal];
-    this.setState({ journals: journals })
-  }
-
-  handleDelete = async (journalToDelete) => {
-    console.log(journalToDelete);
-    const server = `${process.env.REACT_APP_SERVER}/journal/${journalToDelete}`;
-    console.log(server);
-    try {
-      await axios.delete(server);
-      const journals = this.state.journals.filter((candidate) => candidate._id !== journalToDelete);
-      this.setState({ journals: journals });
-      alert(journalToDelete.name + " was deleted");
-    } catch (e) {
-      console.log("error");
-    }
-  };
-
-  handleUpdate = async (journalToUpdate) => {
-    const url = `${process.env.REACT_APP_SERVER}/journal/${journalToUpdate._id}`;
-    try {
-      const res = await axios.put(url, journalToUpdate);
-      const updatedJournal = res.data;
-      this.setState({
-        updatedjournal: updatedJournal,
-        showupdatejournal: true,
-      });
-
-      const copyState = this.state.journals;
-
-      copyState.forEach((journal, idx) => {
-        let journalArr = [];
-        if (journalToUpdate._id === journal._id) {
-          journalArr.push([idx, journal]);
-          copyState[idx] = journalToUpdate;
-          this.setState({
-            journals: copyState,
-          });
-        }
-      });
-    }
-    catch (e) {
-      console.log(e.message);
-    }
-  }
-
   getInfo = async () => {
     try {
       console.log('getHoroscope works')
-      let horoscopeAPI = await axios.get(`${process.env.REACT_APP_SERVER}/horoscope`)
+      let horoscopeAPI = await axios.get(`${process.env.REACT_APP_SERVER}/horoscope?searchQuery=${this.props.userInfo.userBirthDate}`)
       this.setState({
         horoscope: horoscopeAPI.data[0]
       })
@@ -147,13 +96,13 @@ class Astrological extends React.Component {
           <Row>
             <Col>
               {this.state.showjournalentry ? (
-                <JournalEntry handleCreate={this.handleCreate} />) : (
+                <JournalEntry handleCreate={this.props.handleCreate} />) : (
                 <AddJournalButton onButtonClick={this.showJournalEntry} />
               )
 
               }
             </Col>
-            {this.state.showjournalentry ? <JournalEntries journals= {this.state.journals} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} /> : <h3>there are no journals!</h3>}
+            {this.state.showjournalentry ? <JournalEntries journals= {this.props.journals} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} /> : <h3>there are no journals!</h3>}
             <UpdateJournal
               updateJournalState={this.updateJournalState}
               updateJournal={this.state.updatedjournal}
