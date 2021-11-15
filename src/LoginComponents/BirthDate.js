@@ -2,6 +2,7 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Modal } from "react-bootstrap";
+// import '../CSS/BirthDate.css';
 
 class BirthDate extends React.Component {
   constructor(props){
@@ -20,15 +21,15 @@ class BirthDate extends React.Component {
   render() {
     // console.log('birthDate state: ', this.state)
     return (
-      <Modal.Dialog showmodal={this.props.showmodal}>
+      <Modal.Dialog showmodal={this.props.showmodal} style={{ width: '18rem' }}>
         <Modal.Header>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Welcome to Celestiality</Modal.Title>
         </Modal.Header>
-
+      <br></br>
         <Modal.Body>
           <Form >
           <Form.Group className="mb-3" controlId="birthDateDescription">
-            <Form.Label>Enter Your Birthday Here: </Form.Label>
+            <Form.Label>Please Enter Your Birthday Here: </Form.Label>
             <Form.Control onChange={(e)=> this.setState({birthDate: e.target.value})}
               type="date"
               placeholder="Enter Your Birthday Here!"
@@ -36,7 +37,7 @@ class BirthDate extends React.Component {
           </Form.Group>
           </Form>
         </Modal.Body>
-
+        <br></br>
         <Modal.Footer>
           <Button variant="primary" onClick={(e) => this.handleSubmit(e)} type="submit" value="submit">
             Save changes

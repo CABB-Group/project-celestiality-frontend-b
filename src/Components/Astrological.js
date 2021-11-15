@@ -11,6 +11,7 @@ import JournalEntries from './JournalEntries';
 import axios from 'axios';
 import UpdateJournal from "./UpdateJournal.js";
 import AddJournalButton from './AddJournalButton.js';
+// import '../CSS/Astrological.css';
 
 
 
@@ -60,7 +61,7 @@ class Astrological extends React.Component {
     return (
       <>
         <h2>Welcome, {this.props.userInfo.username}</h2>
-        <section style={{ width: '50%', display: 'inline-block' }}>
+        <section className="celestial" style={{display: 'inline-block' }}>
           <Row>
             <Col>
               <ZodiacPicture zodiac={this.state.zodiacpic} />
@@ -92,7 +93,7 @@ class Astrological extends React.Component {
             </Col>
           </Row>
         </section>
-        <section style={{ width: '50%', display: 'inline-block' }}>
+        <section className="journal-entry" style={{ display: 'inline-block' }}>
           <Row>
             <Col>
               {this.state.showjournalentry ? (

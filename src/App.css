@@ -1,4 +1,4 @@
-.App {
+/* /* .App {
   text-align: center;
 }
 
@@ -12,7 +12,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+/* 
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,8 +22,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
+} */
+/* 
 .App-link {
   color: #61dafb;
 }
@@ -36,3 +36,40 @@
     transform: rotate(360deg);
   }
 }
+
+
+body {
+  background-image: url("./Images/celestial-background.jpg");
+  background-size: 100%, 50%;
+  background-repeat: repeat-y;
+  
+}
+
+div.card {
+  margin-left: 400px;
+  margin-top: 80px;
+  opacity: .5px;
+  color: lightcyan;
+  background-color: rgb(38, 45, 145);
+  border-width: 10px;
+  border-style: double solid solid double;
+  text-align: center;
+  padding: 30px;
+  border-radius: 10%;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light {
+  display: flex;
+  padding: 20px;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
+
+h1 {
+  margin-top: 200px;
+  text-align: center;
+}
+
+a.nav-link{
+  color: antiquewhite;
+}    */

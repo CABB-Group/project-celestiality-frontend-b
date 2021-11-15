@@ -2,16 +2,18 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Button } from "react-bootstrap";
 // import img from '../Images/celestial-background.jpg';
+// import '../CSS/JournalEntries.css';
 
 class JournalEntries extends React.Component {
   
+
   render() {
     return (
       <>
-        <Carousel style={{ minHeight: '30rem', color: 'black', backgroundColor: 'transparent' }}>
+        <Carousel className="carousel-journal-entries">
           {this.props.journals.map((el) =>
             <Carousel.Item key={el._id}>
-              <img style={{ display: 'inline-block', margin: '0px auto', backgroundColor: 'transparent' }}
+              <img style={{ display: 'inline-block'}}
                 className="d-block"
                 src="https://via.placeholder.com/400"
                 alt="First slide"

@@ -7,7 +7,12 @@
   border-style: double solid solid double;
   text-align: center;
   border-radius: 10%;
-  margin-left: 360px;
   padding:30px;
   margin-top: 80px;
+  margin-left: 360px;
+}
+
+div.modal-title {
+  font-size: 30px;
+  font-family: 'Bad Script';
 }
