@@ -28,7 +28,7 @@ class JournalEntry extends React.Component {
     return (
       <>
       <h1>this is journalEntry</h1>
-        <Form handleSubmit={this.onCreate}>
+        <Form handleSubmit={this.props.handleCreate}>
           {/* <Form.Title>Your Journal Entry!</Form.Title> */}
 
           <Form.Group className="mb-3" controlId="formBasicName">

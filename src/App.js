@@ -31,7 +31,8 @@ class App extends React.Component {
     this.setState({
       userInfo: {
         username: user.username,
-        email: user.email
+        email: user.email,
+        journals: this.state.userInfo.journals
       },
       loginComplete: true
       
@@ -43,7 +44,8 @@ class App extends React.Component {
       userInfo: {
         username: this.state.userInfo.username,
         email: this.state.userInfo.email,
-        userBirthDate: birthDate
+        userBirthDate: birthDate,
+        journals: this.state.userInfo.journals
       },
       birthDateEntered: true
     })
@@ -54,6 +56,14 @@ class App extends React.Component {
       userInfo: {},
     });
   };
+
+  handleCreate = async (journalInfo) => {
+    const server = `${process.env.REACT_APP_SERVER}/journal`;
+    const response = await axios.post(server, journalInfo);
+    const newJournal = response.data;
+    const journals = [...this.state.userInfo.journals, newJournal];
+    this.setState({ journals: journals })
+  }
 
   handleDelete = async (journalToDelete) => {
     console.log(journalToDelete);
@@ -100,7 +110,7 @@ class App extends React.Component {
 
 
   render() {
-    console.log('App.js state: ', this.state)
+    console.log('App.js state: ', this.state.userInfo.journals)
     return (
       <>
 
@@ -108,8 +118,8 @@ class App extends React.Component {
           <Header user={this.state.user} onLogout={this.logoutHandler} />
           <Routes>
             <Route exact path="/" element={this.state.loginComplete ?
-              <Main setBirthDay={this.setBirthDay} userInfo={this.state.userInfo} birthDateEntered={this.state.birthDateEntered} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} journals={this.state.journals}showupdatejournal={this.state.showupdatejournal}
-              updatedjournal={this.state.updatedjournal}/>
+              <Main setBirthDay={this.setBirthDay} userInfo={this.state.userInfo} birthDateEntered={this.state.birthDateEntered} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} journals={this.state.userInfo.journals}showupdatejournal={this.state.showupdatejournal}
+              updatedjournal={this.state.updatedjournal} handleCreate={this.handleCreate}/>
               : <Login loginHandler={this.loginHandler}  />}>
             </Route>
             <Route path='/aboutus' element={
@@ -117,8 +127,8 @@ class App extends React.Component {
             }>
             </Route>
             <Route path='/pastjournals' element={this.state.showupdatejournal ? <h3>There are no Journals here! </h3> :(
-              <PastJournals handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} journals={this.state.journals}showupdatejournal={this.state.showupdatejournal}
-              updatedjournal={this.state.updatedjournal}/>) 
+              <PastJournals handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} journals={this.state.userInfo.journals}showupdatejournal={this.state.showupdatejournal}
+              updatedjournal={this.state.updatedjournal} handleCreate={this.handleCreate}/>) 
             } />
           </Routes>
 
