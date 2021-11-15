@@ -1,7 +1,7 @@
 import React from 'react';
 import img from '../Images/brandonpic.jpg';
 import Figure from 'react-bootstrap/Figure';
-import '../CSS/AboutUs.css';
+// import '../CSS/AboutUs.css';
 
 class AboutUs extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class AboutUs extends React.Component {
   render() {
     return(
       <Figure className='figure'>
-      {this.state.people.map((el) => <section style={{width:'50%', display:'inline-block'}}><Figure.Image
+      {this.state.people.map((el) => <section><Figure.Image
         width={150}
         height={150}
         src={img}

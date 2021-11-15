@@ -32,15 +32,19 @@ class LoginForm extends Component {
           <Form.Label>Email</Form.Label>
           <Form.Control onChange={this.formInputHandler} type="email" placeholder="Enter email" />
           <Form.Text className="text-muted">
+          <br></br>
+          <br></br>
             We'll never share your email with anyone else.
           </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formUsername">
+        <br></br>
+
           <Form.Label>Username</Form.Label>
           <Form.Control onChange={this.formInputHandler} type="username" placeholder="username" />
         </Form.Group>
-
+        <br></br>
         <Button variant="primary" type="submit">
           SUBMIT
         </Button>

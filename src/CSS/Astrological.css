@@ -1,8 +1,19 @@
-.accordion {
-  margin-left: 30px;
+.accordion .row {
+  margin-left: 20px;
   align-items: center;
 }
 
 h2 {
   color:lightcyan;
+}
+
+.celestial {
+  margin-left: 20px;
+  align-items: center;
+  display: flex;
+}
+
+.journal-entry {
+  align-items: center;
+  display: flex;
 }

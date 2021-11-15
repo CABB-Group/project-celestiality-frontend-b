@@ -8,6 +8,8 @@ import Login from './LoginComponents/Login.js';
 import AboutUs from './Components/AboutUs.js';
 import PastJournals from './Components/PastJournals';
 import axios from 'axios';
+// import './App.css';
+
 
 class App extends React.Component {
   constructor(props) {
