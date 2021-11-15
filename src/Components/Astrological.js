@@ -93,7 +93,8 @@ class Astrological extends React.Component {
   getInfo = async () => {
     try {
       console.log('getHoroscope works')
-      let horoscopeAPI = await axios.get(`${process.env.REACT_APP_SERVER}/horoscope`)
+      let horoscopeAPI = await axios.get(`${process.env.REACT_APP_SERVER}/horoscope?searchQuery=${this.props.userInfo.userBirthDate}`)
+      console.log('this is horoscopeAPI: ',horoscopeAPI)
       this.setState({
         horoscope: horoscopeAPI.data[0]
       })
