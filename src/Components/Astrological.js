@@ -44,23 +44,25 @@ class Astrological extends React.Component {
     try {
       console.log('getHoroscope works', this.props.userInfo);
       let horoscopeAPI = await axios.get(`${process.env.REACT_APP_SERVER}/horoscope?searchQuery=${this.props.userInfo.userBirthDate}`)
+      this.props.getJournals();
       this.setState({
         horoscope: horoscopeAPI.data[0].horoscope,
         astrosign: horoscopeAPI.data[0].sign,
-        historydates: horoscopeAPI.data[0].events
+        historydates: horoscopeAPI.data[0].events,
+        
       })
       console.log('horoscopeAPI', horoscopeAPI.data[0]);
     } catch (error) {
       console.log(error.message)
     }
   }
-
+  
   componentDidMount(){
     this.getInfo();
   }
 
   render() {
-    console.log(this.state); 
+    console.log('astro props:', this.props); 
     return (
       <main>
         <h2>Welcome, {this.props.userInfo.username}</h2>
@@ -99,8 +101,7 @@ class Astrological extends React.Component {
           </Col>
         </section>
         <section className="journal-entry" style={{ display: 'inline-block' }}>
-            <Col>
-            <Row>
+            
               {this.state.showjournalentry ? (
                 <JournalEntry handleCreate={this.props.handleCreate} />) : (
                 <AddJournalButton onButtonClick={this.showJournalEntry} />
@@ -116,8 +117,7 @@ class Astrological extends React.Component {
                 showupdatejournal: false
               })}
             />
-          </Row>
-          </Col>
+          
         </section>
       </main>
     );

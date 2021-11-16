@@ -8,6 +8,7 @@ class JournalEntries extends React.Component {
   
 
   render() {
+    console.log(this.props.journals);
     return (
       <>
         <Carousel className="carousel-journal-entries">
@@ -22,13 +23,13 @@ class JournalEntries extends React.Component {
                 <h3 style={{ backgroundColor: 'transparent' }} >{el.name}</h3>
                 <p style={{ backgroundColor: 'transparent' }}>{el.date}</p>
                 <p style={{ backgroundColor: 'transparent' }}>{el.description}</p>
+              </Carousel.Caption>
                 <Button style={{ backgroundColor: '#534d41', border: '1px solid transparent' }} onClick={()=>{this.props.handleUpdate(el) }}>
                   Update
                 </Button>
                 <Button style={{ backgroundColor: '#db2b39', border: '1px solid transparent', margin: '5px' }} onClick={() => {this.props.handleDelete(el._id)}}>
                   Delete
                 </Button>
-              </Carousel.Caption>
             </Carousel.Item>)}
         </Carousel>
       </>

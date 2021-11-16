@@ -21,7 +21,7 @@ class Main extends React.Component {
 
 
   render() {
-      console.log(this.props.journals);
+      console.log('main props:', this.props);
     return (
       <>
         
@@ -33,7 +33,7 @@ class Main extends React.Component {
                 setBirthDay={this.props.setBirthDay} />
               : <Astrological
                 userInfo={this.props.userInfo} handleDelete={this.props.handleDelete} handleUpdate={this.props.handleUpdate} journals={this.props.journals} showupdatejournal={this.props.showupdatejournal}
-                updatedjournal={this.props.updatedjournal} handleCreate={this.props.handleCreate}/>}
+                updatedjournal={this.props.updatedjournal} handleCreate={this.props.handleCreate} getJournals={this.props.getJournals} />}
 
         
        
