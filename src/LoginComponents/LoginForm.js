@@ -13,7 +13,7 @@ class LoginForm extends Component {
   }
 
   formInputHandler = (event) => {
-    console.log(event.target);
+    //console.log(event.target);
     if (event.target.id === 'formEmail') {
       this.setState({
         email: event.target.value,

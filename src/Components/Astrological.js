@@ -59,51 +59,55 @@ class Astrological extends React.Component {
 
   render() {
     return (
-      <>
+      <main>
         <h2>Welcome, {this.props.userInfo.username}</h2>
         <section className="celestial" style={{display: 'inline-block' }}>
-          <Row>
-            <Col>
-              <ZodiacPicture zodiac={this.state.zodiacpic} />
-            </Col>
+          <Col>
+        
+          <Row id="ZodiacPicture">
+            <h1>Zodiac Picture</h1>
+                          {/* <ZodiacPicture zodiac={this.state.zodiacpic} /> */}
+            
           </Row>
-          <Row>
-            <Col>
-              <AstroSign astrosign={this.state.astrosign} />
-            </Col>
+          <Row id="astrosign">
+          <h1>AstroSign</h1>
+            
+              {/* <AstroSign astrosign={this.state.astrosign} /> */}
+            
           </Row>
-          <Row>
-            <Col>
+          <Row id="horoscope">
+          
+            
               <HoroScope horoscope={this.state.horoscope} />
-            </Col>
+            
           </Row>
           <Row>
-            <Col>
-              <ChineseZodiac chinesezod={this.state.chinesezod} />
-            </Col>
+            <h1>Historical Dates!</h1>
+              {/* <HistoricalDates historydates={this.state.historydates} /> */}
+            
           </Row>
           <Row>
-            <Col>
-              <HistoricalDates historydates={this.state.historydates} />
-            </Col>
+            
+              {/* <ChineseZodiac chinesezod={this.state.chinesezod} /> */}
+            
           </Row>
+          
           <Row>
-            <Col>
-              <Celebrity celebrity={this.state.celebrity} />
-            </Col>
+            
+              {/* <Celebrity celebrity={this.state.celebrity} /> */}
+          
           </Row>
+          </Col>
         </section>
         <section className="journal-entry" style={{ display: 'inline-block' }}>
-          <Row>
             <Col>
+            <Row>
               {this.state.showjournalentry ? (
                 <JournalEntry handleCreate={this.props.handleCreate} />) : (
                 <AddJournalButton onButtonClick={this.showJournalEntry} />
               )
-
               }
-            </Col>
-            {this.state.showjournalentry ? <JournalEntries journals= {this.props.journals} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} /> : <h3>there are no journals!</h3>}
+                        {this.state.showjournalentry ? <JournalEntries journals= {this.props.journals} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} /> : <h3>there are no journals!</h3>}
             <UpdateJournal
               updateJournalState={this.updateJournalState}
               updateJournal={this.state.updatedjournal}
@@ -114,8 +118,9 @@ class Astrological extends React.Component {
               })}
             />
           </Row>
+          </Col>
         </section>
-      </>
+      </main>
     );
   }
 }

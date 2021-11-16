@@ -1,4 +1,4 @@
-/* /* .App {
+.App {
   text-align: center;
 }
 
@@ -12,7 +12,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-/* 
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,8 +22,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-} */
-/* 
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -37,18 +37,17 @@
   }
 }
 
-
 body {
   background-image: url("./Images/celestial-background.jpg");
   background-size: 100%, 50%;
   background-repeat: repeat-y;
-  
 }
 
-div.card {
-  margin-left: 400px;
-  margin-top: 80px;
-  opacity: .5px;
+div.card,
+#BirthDate,
+main {
+  margin: 80px auto;
+  opacity: 0.5px;
   color: lightcyan;
   background-color: rgb(38, 45, 145);
   border-width: 10px;
@@ -70,6 +69,33 @@ h1 {
   text-align: center;
 }
 
-a.nav-link{
+a.nav-link {
   color: antiquewhite;
-}    */
+}
+
+section {
+  width: 50%;
+}
+
+.row {
+  width: 90%;
+  background-color: red;
+}
+
+.col {
+  width: 90%;
+  background-color: purple;
+  margin: 0px auto;
+}
+
+#astrosign,
+#ZodiacPicture {
+  display: inline-block;
+  background-color: green;
+  width: 50%;
+}
+
+#horosocpe {
+  margin: 0px auto;
+  padding: 0px auto;
+}
