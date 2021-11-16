@@ -99,3 +99,10 @@ section {
   margin: 0px auto;
   padding: 0px auto;
 }
+
+.journal-entry {
+  height: 100%;
+  vertical-align: top;
+  min-height: 300px;
+  background-color: white;
+}

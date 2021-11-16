@@ -46,8 +46,7 @@ class App extends React.Component {ß
       userInfo: {
         username: this.state.userInfo.username,
         email: this.state.userInfo.email,
-        userBirthDate: birthDate,
-        journals: this.state.userInfo.journals
+        userBirthDate: birthDate
       },
       birthDateEntered: true
     })
@@ -110,9 +109,23 @@ class App extends React.Component {ß
     }
   }
 
+  getJournals = async () => {
+    let getJournalsApi = await axios.get(`${process.env.REACT_APP_SERVER}/journal`) 
+    console.log('get Journal API', getJournalsApi.data)
+    let journalData = getJournalsApi.data;
+    this.setState({
+        userInfo: {
+        username: this.state.userInfo.username,
+        email: this.state.userInfo.email,
+        userBirthDate: this.state.userInfo.userBirthDate,
+        journals: journalData
+      }
+    })
+  }
+
 
   render() {
-    console.log('App.js state: ', this.state.userInfo.journals)
+    console.log('App.js state: ', this.state);
     return (
       <>
 
@@ -122,7 +135,7 @@ class App extends React.Component {ß
           <Routes>
             <Route exact path="/" element={this.state.loginComplete ?
               <Main setBirthDay={this.setBirthDay} userInfo={this.state.userInfo} birthDateEntered={this.state.birthDateEntered} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} journals={this.state.userInfo.journals}showupdatejournal={this.state.showupdatejournal}
-              updatedjournal={this.state.updatedjournal} handleCreate={this.handleCreate}/>
+              updatedjournal={this.state.updatedjournal} handleCreate={this.handleCreate} getJournals={this.getJournals}/>
               : <Login loginHandler={this.loginHandler}  />}>
             </Route>
             <Route path='/aboutus' element={
