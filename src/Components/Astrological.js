@@ -42,7 +42,7 @@ class Astrological extends React.Component {
 
   getInfo = async () => {
     try {
-      console.log('getHoroscope works', this.props.userInfo);
+      // console.log('getHoroscope works', this.props.userInfo);
       let horoscopeAPI = await axios.get(`${process.env.REACT_APP_SERVER}/horoscope?searchQuery=${this.props.userInfo.userBirthDate}`)
       this.props.getJournals();
       this.setState({
@@ -51,14 +51,14 @@ class Astrological extends React.Component {
         historydates: horoscopeAPI.data[0].events,
 
       })
-      console.log('horoscopeAPI', horoscopeAPI.data[0]);
+      // console.log('horoscopeAPI', horoscopeAPI.data[0]);
     } catch (error) {
       console.log(error.message)
     }
   }
 
-  showUpdateModal=() => {
-    this.setState({showupdatejournal:true})
+  showUpdateModal = () => {
+    this.setState({ showupdatejournal: true })
   }
 
   componentDidMount() {
@@ -66,7 +66,7 @@ class Astrological extends React.Component {
   }
 
   render() {
-    console.log('astro props:', this.props);
+    // console.log('astro props:', this.props.userInfo.journals);
     return (
       <main>
         <h2>Welcome, {this.props.userInfo.username}</h2>
@@ -107,23 +107,31 @@ class Astrological extends React.Component {
         <section className="journal-entry" style={{ display: 'inline-block' }}>
 
           {this.state.showjournalentry ? (
-            <JournalEntry handleCreate={this.props.handleCreate} />) : (
-            <AddJournalButton onButtonClick={this.showJournalEntry} />
+            <JournalEntry
+              handleCreate={this.props.handleCreate} />) : (
+            <AddJournalButton
+              onButtonClick={this.showJournalEntry} />
           )
           }
-          {this.state.showjournalentry ? <JournalEntries showUpdateModal={this.showUpdateModal} showupdatejournal={this.state.showupdatejournal} journals={this.props.journals} handleDelete={this.props.handleDelete} handleUpdate={this.props.handleUpdate} /> : <h3>there are no journals!</h3>}
-          {this.state.showupdatejournal ?  
-          <UpdateJournal
-            showupdatejournal={this.props.showupdatejournal}
-            // updateJournalState={this.updateJournalState}
-            updateJournal={this.state.updatedjournal}
+          {this.props.userInfo.journals ?
+            <JournalEntries
+              showUpdateModal={this.showUpdateModal}
+              showupdatejournal={this.state.showupdatejournal}
+              journals={this.props.journals}
+              handleDelete={this.props.handleDelete}
+              handleUpdate={this.props.handleUpdate} />
+            : <h3>there are no journals!</h3>}
+          {this.state.showupdatejournal ?
+            <UpdateJournal
+              showupdatejournal={this.props.showupdatejournal}
+              updatedjournal={this.props.updatedjournal}
             // handleUpdate={this.handleUpdate}
             // showupdatejournal={this.state.showupdatejournal}
             // onClose={() => this.setState({
             //   showupdatejournal: false
             // })}
-          /> 
-          : ''}
+            />
+            : ''}
 
         </section>
       </main>
