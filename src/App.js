@@ -11,7 +11,7 @@ import axios from 'axios';
 import './App.css';
 
 
-class App extends React.Component {ß
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,7 +37,7 @@ class App extends React.Component {ß
         journals: this.state.userInfo.journals
       },
       loginComplete: true
-      
+
     });
   };
 
@@ -68,9 +68,9 @@ class App extends React.Component {ß
   }
 
   handleDelete = async (journalToDelete) => {
-    console.log(journalToDelete);
+    // console.log(journalToDelete);
     const server = `${process.env.REACT_APP_SERVER}/journal/${journalToDelete}`;
-    console.log(server);
+    // console.log(server);
     try {
       await axios.delete(server);
       this.getJournals();
@@ -84,39 +84,41 @@ class App extends React.Component {ß
   };
 
   handleUpdate = async (journalToUpdate) => {
+    console.log('handleUpadate response:' ,journalToUpdate)
     const url = `${process.env.REACT_APP_SERVER}/journal/${journalToUpdate}`;
-    try {
-      const res = await axios.put(url);
-      const updatedJournal = res.data;
-      this.setState({
-        updatedjournal: updatedJournal,
-        showupdatejournal: true,
-      });
+    console.log('url in handleUpdate', url);
+    // try {
+    //   const res = await axios.put(url);
+    //   const updatedJournal = res.data;
+    //   this.setState({
+    //     updatedjournal: updatedJournal,
+    //     showupdatejournal: true,
+    //   });
 
-      const copyState = this.state.journals;
+    //   const copyState = this.state.journals;
 
-      // copyState.forEach((journal, idx) => {
-      //   let journalArr = [];
-      //   if (journalToUpdate._id === journal._id) {
-      //     journalArr.push([idx, journal]);
-      //     copyState[idx] = journalToUpdate;
-      //     this.setState({
-      //       journals: copyState,
-      //     });
-      //   }
-      // });
-    }
-    catch (e) {
-      console.log(e.message);
-    }
+    //   copyState.forEach((journal, idx) => {
+    //     let journalArr = [];
+    //     if (journalToUpdate._id === journal._id) {
+    //       journalArr.push([idx, journal]);
+    //       copyState[idx] = journalToUpdate;
+    //       this.setState({
+    //         journals: copyState,
+    //       });
+    //     }
+    //   });
+    // }
+    // catch (e) {
+    //   console.log(e.message);
+    // }
   }
 
   getJournals = async () => {
-    let getJournalsApi = await axios.get(`${process.env.REACT_APP_SERVER}/journal`) 
-    console.log('get Journal API', getJournalsApi.data)
+    let getJournalsApi = await axios.get(`${process.env.REACT_APP_SERVER}/journal`)
+    // console.log('get Journal API', getJournalsApi.data)
     let journalData = getJournalsApi.data;
     this.setState({
-        userInfo: {
+      userInfo: {
         username: this.state.userInfo.username,
         email: this.state.userInfo.email,
         userBirthDate: this.state.userInfo.userBirthDate,
@@ -133,20 +135,36 @@ class App extends React.Component {ß
 
         <Router>
           <Header user={this.state.user} onLogout={this.logoutHandler} />
-     
+
           <Routes>
             <Route exact path="/" element={this.state.loginComplete ?
-              <Main setBirthDay={this.setBirthDay} userInfo={this.state.userInfo} birthDateEntered={this.state.birthDateEntered} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} journals={this.state.userInfo.journals}showupdatejournal={this.state.showupdatejournal}
-              updatedjournal={this.state.updatedjournal} handleCreate={this.handleCreate} getJournals={this.getJournals}/>
-              : <Login loginHandler={this.loginHandler}  />}>
+              <Main
+              
+                setBirthDay={this.setBirthDay}
+                userInfo={this.state.userInfo}
+                birthDateEntered={this.state.birthDateEntered}
+                handleDelete={this.handleDelete}
+                handleUpdate={this.handleUpdate}
+                journals={this.state.userInfo.journals}
+                showupdatejournal={this.state.showupdatejournal}
+                updatedjournal={this.state.updatedjournal}
+                handleCreate={this.handleCreate}
+                getJournals={this.getJournals} />
+              : <Login loginHandler={this.loginHandler} />}>
             </Route>
             <Route path='/aboutus' element={
               <AboutUs />
             }>
             </Route>
-            <Route path='/pastjournals' element={this.state.showupdatejournal ? <h3>There are no Journals here! </h3> :(
-              <PastJournals handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} journals={this.state.userInfo.journals}showupdatejournal={this.state.showupdatejournal}
-              updatedjournal={this.state.updatedjournal} handleCreate={this.handleCreate}/>) 
+            <Route path='/pastjournals' element={this.state.showupdatejournal
+              ? <h3>There are no Journals here! </h3> : (
+                <PastJournals
+                  handleDelete={this.handleDelete}
+                  handleUpdate={this.handleUpdate}
+                  journals={this.state.userInfo.journals}
+                  showupdatejournal={this.state.showupdatejournal}
+                  updatedjournal={this.state.updatedjournal}
+                  handleCreate={this.handleCreate} />)
             } />
           </Routes>
 

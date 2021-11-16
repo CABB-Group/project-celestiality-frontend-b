@@ -4,6 +4,12 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 class UpdateJournal extends React.Component {
+  constructor(props){
+    super(props);
+    this.state= {
+      
+    }
+  }
   handleSubmit = (ev) => {
     ev.preventDefault();
 
@@ -35,7 +41,7 @@ class UpdateJournal extends React.Component {
                 <Form.Control
                   type='name'
                   placeholder='Enter Book Title'
-                  defaultValue={this.props.updateJournal.name}
+                  defaultValue={this.props.updatedjournal.name}
                 ></Form.Control>
               </Form.Group>
               <Form.Group className='mb-3' controlId='journalDescription'>
@@ -43,7 +49,7 @@ class UpdateJournal extends React.Component {
                 <Form.Control
                   type='name'
                   placeholder='Enter Book Description'
-                  defaultValue={this.props.updateJournal.description}
+                  defaultValue={this.props.updatedjournal.description}
                 ></Form.Control>
               </Form.Group>
               <Form.Group className='mb-3' controlId='journalDate'>
@@ -51,7 +57,7 @@ class UpdateJournal extends React.Component {
                 <Form.Control
                   type='date'
                   placeholder='Enter the Date'
-                  defaultValue={this.props.updateJournal.date}
+                  defaultValue={this.props.updatedjournal.date}
                 ></Form.Control>
               </Form.Group>
               <Button type='Submit'>Submit</Button>

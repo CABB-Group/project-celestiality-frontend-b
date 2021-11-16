@@ -32,12 +32,14 @@ class Main extends React.Component {
                 showModal={this.state.showmodal}
                 setBirthDay={this.props.setBirthDay} />
               : <Astrological
-                userInfo={this.props.userInfo} handleDelete={this.props.handleDelete} handleUpdate={this.props.handleUpdate} journals={this.props.journals} showupdatejournal={this.props.showupdatejournal}
-                updatedjournal={this.props.updatedjournal} handleCreate={this.props.handleCreate} getJournals={this.props.getJournals} />}
-
-        
-       
-
+                userInfo={this.props.userInfo} 
+                handleDelete={this.props.handleDelete} 
+                handleUpdate={this.props.handleUpdate} 
+                journals={this.props.journals} 
+                showupdatejournal={this.props.showupdatejournal}
+                updatedjournal={this.props.updatedjournal} 
+                handleCreate={this.props.handleCreate} 
+                getJournals={this.props.getJournals} />}
       </>
 
 
