@@ -63,7 +63,8 @@ class App extends React.Component {ß
     const response = await axios.post(server, journalInfo);
     const newJournal = response.data;
     const journals = [...this.state.userInfo.journals, newJournal];
-    this.setState({ journals: journals })
+    // this.setState({ journals: journals })
+    this.getJournals();
   }
 
   handleDelete = async (journalToDelete) => {
@@ -72,9 +73,10 @@ class App extends React.Component {ß
     console.log(server);
     try {
       await axios.delete(server);
-      const journals = this.state.journals.filter((candidate) => candidate._id !== journalToDelete);
-      this.setState({ journals: journals });
-      alert(journalToDelete.name+ " was deleted");
+      this.getJournals();
+      // const journals = this.state.journals.filter((candidate) => candidate._id !== journalToDelete);
+      // this.setState({ journals: journals });
+      // alert(journalToDelete.name+ " was deleted");
 
     } catch (e) {
       console.log("error");
@@ -82,9 +84,9 @@ class App extends React.Component {ß
   };
 
   handleUpdate = async (journalToUpdate) => {
-    const url = `${process.env.REACT_APP_SERVER}/journal/${journalToUpdate._id}`;
+    const url = `${process.env.REACT_APP_SERVER}/journal/${journalToUpdate}`;
     try {
-      const res = await axios.put(url, journalToUpdate);
+      const res = await axios.put(url);
       const updatedJournal = res.data;
       this.setState({
         updatedjournal: updatedJournal,
@@ -93,16 +95,16 @@ class App extends React.Component {ß
 
       const copyState = this.state.journals;
 
-      copyState.forEach((journal, idx) => {
-        let journalArr = [];
-        if (journalToUpdate._id === journal._id) {
-          journalArr.push([idx, journal]);
-          copyState[idx] = journalToUpdate;
-          this.setState({
-            journals: copyState,
-          });
-        }
-      });
+      // copyState.forEach((journal, idx) => {
+      //   let journalArr = [];
+      //   if (journalToUpdate._id === journal._id) {
+      //     journalArr.push([idx, journal]);
+      //     copyState[idx] = journalToUpdate;
+      //     this.setState({
+      //       journals: copyState,
+      //     });
+      //   }
+      // });
     }
     catch (e) {
       console.log(e.message);

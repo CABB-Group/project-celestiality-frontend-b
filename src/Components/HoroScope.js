@@ -7,7 +7,7 @@ class HoroScope extends React.Component {
     console.log('horoscope props: ', this.props.horoscope)
     return (
       <Accordion defaultActiveKey="0">
-        <Accordion.Item eventKey="0" key={this.props.horoscope}>
+        <Accordion.Item eventKey="0" key={this.props.horoscope.description}>
           <Accordion.Header>Your HoroScope!</Accordion.Header>
           <Accordion.Body>
             <h5>{this.props.horoscope.description}</h5>
