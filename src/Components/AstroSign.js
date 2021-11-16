@@ -10,7 +10,7 @@ class AstroSign extends React.Component {
         <Accordion.Item eventKey="0">
           <Accordion.Header>Your Astrological Facts!</Accordion.Header>
           <Accordion.Body>
-            <h2>This is accord</h2>
+            <h2>{this.props.astrosign}</h2>
             {/* {this.props.astrosign.map((item, idx) => (
               <Sign key={item._id} itemData={item} />
             ))} */}

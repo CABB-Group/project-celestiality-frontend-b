@@ -8,23 +8,14 @@ class HistoricalDates extends React.Component {
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
           <Accordion.Header>Your Birthday Historical Facts!</Accordion.Header>
-          <Accordion.Body>
             {this.props.historydates.map((item, idx) => (
-              <Sign key={item._id} itemData={item} />
+          <Accordion.Body key={idx}>
+              <h3 > {item.description} </h3>
+              </Accordion.Body>
             ))}
-
-            {Sign}
-          </Accordion.Body>
         </Accordion.Item>
       </Accordion>
     );
-  }
-}
-
-class Sign extends React.Component {
-  render() {
-    const itemData = this.props.itemData;
-    return <Col>{itemData}</Col>;
   }
 }
 

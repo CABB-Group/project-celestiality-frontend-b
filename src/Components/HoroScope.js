@@ -4,13 +4,13 @@ import Col from "react-bootstrap/Col";
 
 class HoroScope extends React.Component {
   render() {
-    console.log('horoscope props: ', this.props)
+    console.log('horoscope props: ', this.props.horoscope)
     return (
       <Accordion defaultActiveKey="0">
-        <Accordion.Item eventKey="0" key={this.props.horoscope.sign}>
+        <Accordion.Item eventKey="0" key={this.props.horoscope}>
           <Accordion.Header>Your HoroScope!</Accordion.Header>
           <Accordion.Body>
-            <h5>{this.props.horoscope.sign}</h5>
+            <h5>{this.props.horoscope.description}</h5>
             {/* <h5>{this.props.horoscope}</h5> */}
             {/* {this.props.horoscope.map((item, idx) => (
               <Sign key={item.sign} itemData={item} />
