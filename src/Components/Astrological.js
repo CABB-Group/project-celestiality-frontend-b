@@ -42,12 +42,14 @@ class Astrological extends React.Component {
 
   getInfo = async () => {
     try {
-      console.log('getHoroscope works')
+      console.log('getHoroscope works', this.props.userInfo);
       let horoscopeAPI = await axios.get(`${process.env.REACT_APP_SERVER}/horoscope?searchQuery=${this.props.userInfo.userBirthDate}`)
       this.setState({
-        horoscope: horoscopeAPI.data[0]
+        horoscope: horoscopeAPI.data[0].horoscope,
+        astrosign: horoscopeAPI.data[0].sign,
+        historydates: horoscopeAPI.data[0].events
       })
-      console.log('horoscopeAPI', horoscopeAPI.data);
+      console.log('horoscopeAPI', horoscopeAPI.data[0]);
     } catch (error) {
       console.log(error.message)
     }
@@ -58,6 +60,7 @@ class Astrological extends React.Component {
   }
 
   render() {
+    console.log(this.state); 
     return (
       <main>
         <h2>Welcome, {this.props.userInfo.username}</h2>
@@ -66,24 +69,20 @@ class Astrological extends React.Component {
         
           <Row id="ZodiacPicture">
             <h1>Zodiac Picture</h1>
-                          {/* <ZodiacPicture zodiac={this.state.zodiacpic} /> */}
+                          <ZodiacPicture zodiacpic={this.state.zodiacpic} />
             
           </Row>
-          <Row id="astrosign">
-          <h1>AstroSign</h1>
-            
-              {/* <AstroSign astrosign={this.state.astrosign} /> */}
-            
+          <Row id="astrosign">         
+              <AstroSign astrosign={this.state.astrosign} />
           </Row>
+
           <Row id="horoscope">
-          
-            
               <HoroScope horoscope={this.state.horoscope} />
             
           </Row>
           <Row>
             <h1>Historical Dates!</h1>
-              {/* <HistoricalDates historydates={this.state.historydates} /> */}
+              <HistoricalDates historydates={this.state.historydates} />
             
           </Row>
           <Row>
