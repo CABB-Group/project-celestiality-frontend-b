@@ -27,7 +27,7 @@ class Astrological extends React.Component {
       chinesezod: [],
       zodiacpic: 'https://via.placeholder.com/150',
       showjournalentry: false,
-      showupdatejournal: false,
+      showupdatejournal: true,
       updatedjournal: "",
       journalentry: false,
     };
@@ -49,75 +49,82 @@ class Astrological extends React.Component {
         horoscope: horoscopeAPI.data[0].horoscope,
         astrosign: horoscopeAPI.data[0].sign,
         historydates: horoscopeAPI.data[0].events,
-        
+
       })
       console.log('horoscopeAPI', horoscopeAPI.data[0]);
     } catch (error) {
       console.log(error.message)
     }
   }
-  
-  componentDidMount(){
+
+  showUpdateModal=() => {
+    this.setState({showupdatejournal:true})
+  }
+
+  componentDidMount() {
     this.getInfo();
   }
 
   render() {
-    console.log('astro props:', this.props); 
+    console.log('astro props:', this.props);
     return (
       <main>
         <h2>Welcome, {this.props.userInfo.username}</h2>
-        <section className="celestial" style={{display: 'inline-block' }}>
+        <section className="celestial" style={{ display: 'inline-block' }}>
           <Col>
-        
-          <Row id="ZodiacPicture">
-            <h1>Zodiac Picture</h1>
-                          <ZodiacPicture zodiacpic={this.state.zodiacpic} />
-            
-          </Row>
-          <Row id="astrosign">         
-              <AstroSign astrosign={this.state.astrosign} />
-          </Row>
 
-          <Row id="horoscope">
+            <Row id="ZodiacPicture">
+              <h1>Zodiac Picture</h1>
+              <ZodiacPicture zodiacpic={this.state.zodiacpic} />
+
+            </Row>
+            <Row id="astrosign">
+              <AstroSign astrosign={this.state.astrosign} />
+            </Row>
+
+            <Row id="horoscope">
               <HoroScope horoscope={this.state.horoscope} />
-            
-          </Row>
-          <Row>
-            <h1>Historical Dates!</h1>
+
+            </Row>
+            <Row>
+              <h1>Historical Dates!</h1>
               <HistoricalDates historydates={this.state.historydates} />
-            
-          </Row>
-          <Row>
-            
+
+            </Row>
+            <Row>
+
               {/* <ChineseZodiac chinesezod={this.state.chinesezod} /> */}
-            
-          </Row>
-          
-          <Row>
-            
+
+            </Row>
+
+            <Row>
+
               {/* <Celebrity celebrity={this.state.celebrity} /> */}
-          
-          </Row>
+
+            </Row>
           </Col>
         </section>
         <section className="journal-entry" style={{ display: 'inline-block' }}>
-            
-              {this.state.showjournalentry ? (
-                <JournalEntry handleCreate={this.props.handleCreate} />) : (
-                <AddJournalButton onButtonClick={this.showJournalEntry} />
-              )
-              }
-                        {this.state.showjournalentry ? <JournalEntries journals= {this.props.journals} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} /> : <h3>there are no journals!</h3>}
-            <UpdateJournal
-              updateJournalState={this.updateJournalState}
-              updateJournal={this.state.updatedjournal}
-              handleUpdate={this.handleUpdate}
-              showUpdateForm={this.state.showupdatejournal}
-              onClose={() => this.setState({
-                showupdatejournal: false
-              })}
-            />
-          
+
+          {this.state.showjournalentry ? (
+            <JournalEntry handleCreate={this.props.handleCreate} />) : (
+            <AddJournalButton onButtonClick={this.showJournalEntry} />
+          )
+          }
+          {this.state.showjournalentry ? <JournalEntries showUpdateModal={this.showUpdateModal} showupdatejournal={this.state.showupdatejournal} journals={this.props.journals} handleDelete={this.props.handleDelete} handleUpdate={this.props.handleUpdate} /> : <h3>there are no journals!</h3>}
+          {this.state.showupdatejournal ?  
+          <UpdateJournal
+            showupdatejournal={this.props.showupdatejournal}
+            // updateJournalState={this.updateJournalState}
+            updateJournal={this.state.updatedjournal}
+            // handleUpdate={this.handleUpdate}
+            // showupdatejournal={this.state.showupdatejournal}
+            // onClose={() => this.setState({
+            //   showupdatejournal: false
+            // })}
+          /> 
+          : ''}
+
         </section>
       </main>
     );

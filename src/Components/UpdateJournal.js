@@ -24,7 +24,7 @@ class UpdateJournal extends React.Component {
   render() {
     return (
       <>
-        <Modal show={this.props.showUpdateForm} onHide={this.handleClose} className="arrange-modal">
+        <Modal show={this.props.showupdatejournal} onHide={this.handleClose} className="arrange-modal">
           <Modal.Header closeButton>
             <Modal.Title>UPDATE</Modal.Title>
           </Modal.Header>
