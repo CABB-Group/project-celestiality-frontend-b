@@ -1,8 +1,5 @@
 import React from "react";
-// import { Col, Row } from "react-bootstrap";
 import Astrological from "./Astrological.js";
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Col, Row } from 'react-bootstrap';
 import BirthDate from '../LoginComponents/BirthDate.js';
 
 
@@ -27,8 +24,8 @@ class Main extends React.Component {
       console.log(this.props.journals);
     return (
       <>
-        <Row>
-          <Col>
+        
+         
             {this.state.showmodal ?
               <BirthDate
                 changeBirthdayModal={this.changeBirthdayModal}
@@ -38,8 +35,8 @@ class Main extends React.Component {
                 userInfo={this.props.userInfo} handleDelete={this.props.handleDelete} handleUpdate={this.props.handleUpdate} journals={this.props.journals} showupdatejournal={this.props.showupdatejournal}
                 updatedjournal={this.props.updatedjournal} handleCreate={this.props.handleCreate}/>}
 
-          </Col>
-        </Row>
+        
+       
 
       </>
 

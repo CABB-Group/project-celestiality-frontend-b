@@ -21,7 +21,7 @@ class BirthDate extends React.Component {
   render() {
     // console.log('birthDate state: ', this.state)
     return (
-      <Modal.Dialog showmodal={this.props.showmodal} style={{ width: '18rem' }}>
+      <Modal.Dialog showmodal={this.props.showmodal}  id="BirthDate">
         <Modal.Header>
           <Modal.Title>Welcome to Celestiality</Modal.Title>
         </Modal.Header>

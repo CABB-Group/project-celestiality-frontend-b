@@ -1,8 +1,8 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Button } from "react-bootstrap";
-// import img from '../Images/celestial-background.jpg';
-// import '../CSS/JournalEntries.css';
+import img from '../Images/celestial-background.jpg';
+import '../CSS/JournalEntries.css';
 
 class JournalEntries extends React.Component {
   

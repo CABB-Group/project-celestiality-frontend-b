@@ -8,10 +8,10 @@ import Login from './LoginComponents/Login.js';
 import AboutUs from './Components/AboutUs.js';
 import PastJournals from './Components/PastJournals';
 import axios from 'axios';
-// import './App.css';
+import './App.css';
 
 
-class App extends React.Component {
+class App extends React.Component {ß
   constructor(props) {
     super(props);
     this.state = {
@@ -118,6 +118,7 @@ class App extends React.Component {
 
         <Router>
           <Header user={this.state.user} onLogout={this.logoutHandler} />
+     
           <Routes>
             <Route exact path="/" element={this.state.loginComplete ?
               <Main setBirthDay={this.setBirthDay} userInfo={this.state.userInfo} birthDateEntered={this.state.birthDateEntered} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} journals={this.state.userInfo.journals}showupdatejournal={this.state.showupdatejournal}

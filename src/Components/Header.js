@@ -15,6 +15,7 @@ class Header extends React.Component {
 
   render() {
     return (
+      <header>
       <Navbar
         collapseOnSelect
         expand="lg"
@@ -41,6 +42,7 @@ class Header extends React.Component {
         </NavItem>
 
       </Navbar>
+      </header>
     );
   }
 }
