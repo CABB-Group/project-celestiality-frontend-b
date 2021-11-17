@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Auth0Provider } from "@auth0/auth0-react";
-
+// this is where i added the bootstrap link
 ReactDOM.render(
   // <Auth0Provider
   //   domain="dev-3hgg7hjn.us.auth0.com"
