@@ -117,7 +117,8 @@ class Astrological extends React.Component {
               showupdatejournal={this.state.showupdatejournal}
               journals={this.props.journals}
               handleDelete={this.props.handleDelete}
-              handleUpdate={this.props.handleUpdate} />
+              handleUpdate={this.props.handleUpdate}
+              pullUpdatedEntry={this.props.pullUpdatedEntry} />
             : <h3>there are no journals!</h3>}
           {this.state.showupdatejournal ?
             <UpdateJournal

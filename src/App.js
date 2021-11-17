@@ -84,12 +84,17 @@ class App extends React.Component {
     }
   };
 
+  pullUpdatedEntry = (element)=>{
+    this.setState({
+      updatedjournal:element
+    })
+  }
   handleUpdate = async (journalToUpdate) => {
     console.log('handleUpadate response:', journalToUpdate)
     const url = `${process.env.REACT_APP_SERVER}/journal/${journalToUpdate._id}`;
     console.log('url in handleUpdate', url);
     try {
-      const res = await axios.put(url);
+      const res = await axios.put(url,journalToUpdate);
       const updatedJournal = res.data;
       console.log('this is updatedJournal: ', updatedJournal);
       this.setState({
@@ -162,7 +167,8 @@ class App extends React.Component {
                 updatedjournal={this.state.updatedjournal}
                 handleCreate={this.handleCreate}
                 getJournals={this.getJournals} 
-                showUpdateModal={this.showUpdateModal}/>
+                showUpdateModal={this.showUpdateModal}
+                pullUpdatedEntry={this.pullUpdatedEntry}/>
                 
               : <Login loginHandler={this.loginHandler} />}>
             </Route>
