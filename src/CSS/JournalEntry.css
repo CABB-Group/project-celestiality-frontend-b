@@ -1,3 +1,15 @@
-btn.btn-secondary.btn-lg {
-  margin-bottom: 60px;
+
+
+section.journal-entry{
+  color:aliceblue;
+  background-color: blue;
+
+  
+  color: lightcyan;
+  background-color: rgb(38, 45, 145);
+  /* border-width: 10px; */
+  
+  text-align: center;
+  /* padding: 30px; */
+  
 }

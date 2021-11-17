@@ -44,11 +44,11 @@ body {
 }
 
 div.card,
-#BirthDate,
+#BirthDate,#updateModal,
 main {
   margin: 80px auto;
   opacity: 0.5px;
-  color: lightcyan;
+  color: rgb(24, 38, 140);
   background-color: rgb(38, 45, 145);
   border-width: 10px;
   border-style: double solid solid double;

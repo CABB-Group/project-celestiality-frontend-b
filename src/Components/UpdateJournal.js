@@ -31,28 +31,30 @@ class UpdateJournal extends React.Component {
     console.log('this is updatedJournal props',this.props);
     return (
       <>
-        <Modal show={this.props.showupdatejournal} onHide={this.handleClose} className="arrange-modal">
+        <Modal id="updateModal" show={this.props.showupdatejournal} onHide={this.handleClose} className="arrange-modal">
           <Modal.Header closeButton>
             <Modal.Title>UPDATE</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form onSubmit={(ev) => this.handleSubmit(ev)}>
               <Form.Group className='mb-3' controlId='journalName'>
-                <Form.Label>Name</Form.Label>
+                <Form.Label>Title</Form.Label>
                 <Form.Control
                   type='name'
-                  placeholder='Enter Book Title'
+                  placeholder='Enter Journal Title'
                   defaultValue={this.props.updatedjournal.name}
                 ></Form.Control>
               </Form.Group>
               <Form.Group className='mb-3' controlId='journalDescription'>
+                <br></br>
                 <Form.Label>Description</Form.Label>
                 <Form.Control
                   type='name'
-                  placeholder='Enter Book Description'
+                  placeholder='Enter Journal Description'
                   defaultValue={this.props.updatedjournal.description}
                 ></Form.Control>
               </Form.Group>
+              <br></br>
               <Form.Group className='mb-3' controlId='journalDate'>
                 <Form.Label>Date</Form.Label>
                 <Form.Control
@@ -61,10 +63,12 @@ class UpdateJournal extends React.Component {
                   defaultValue={this.props.updatedjournal.date}
                 ></Form.Control>
               </Form.Group>
-              <Button type='Submit'>Submit</Button>
+              <br></br>
+              <Button type='Submit' >Submit</Button>
             </Form>
           </Modal.Body>
           <Modal.Footer>
+          <br></br>
             <Button className="color-submit" onClick={this.handleClose}>Close</Button>
           </Modal.Footer>
         </Modal>
