@@ -3,7 +3,6 @@ import Carousel from "react-bootstrap/Carousel";
 import { Button } from "react-bootstrap";
 // import img from '../Images/celestial-background.jpg';
 import '../CSS/JournalEntries.css';
-import img from '../Images/unnamed.jpg';
 
 class JournalEntries extends React.Component {
 
@@ -12,7 +11,6 @@ class JournalEntries extends React.Component {
     // this.props.pullUpdatedEntry(el);
     this.props.handleUpdate(el);
     this.props.showUpdateModal();
-    // this.props.onClose();
     // console.log(this.props.journals._id);
 
   }
@@ -25,25 +23,25 @@ class JournalEntries extends React.Component {
           {this.props.journals.map((el) =>
             <Carousel.Item key={el._id}>
               <img style={{ display: 'inline-block' }}
-                className='d-block w-100'
-                src='https://via.placeholder.com/150'
+                className="d-block"
+                src="https://via.placeholder.com/400"
                 alt="First slide"
               />
               <Carousel.Caption style={{ color: 'black', backgroundColor: 'transparent' }}>
                 <h3 style={{ backgroundColor: 'transparent' }} >{el.name}</h3>
                 <p style={{ backgroundColor: 'transparent' }}>{el.date}</p>
                 <p style={{ backgroundColor: 'transparent' }}>{el.description}</p>
-                <Button
+              </Carousel.Caption>
+              <Button
                 style={{ backgroundColor: '#534d41', border: '1px solid transparent' }}
                 onClick={()=>this.updateJournal(el)}>
-                Update
-                </Button>
-                <Button
+                Upd
+              </Button>
+              <Button
                 style={{ backgroundColor: '#db2b39', border: '1px solid transparent', margin: '5px' }}
                 onClick={()=>this.props.handleDelete(el._id)}>
                 Delete
-                </Button>
-              </Carousel.Caption>
+              </Button>
             </Carousel.Item>)}
         </Carousel>
       </>

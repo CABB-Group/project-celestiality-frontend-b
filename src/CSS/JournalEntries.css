@@ -1,9 +1,7 @@
-.d-block  {
-  max-height: 500px;
-  max-width: 400px;
-  padding: 20px;
+.carousel.slide {
+  width: 100px;
 }
 
-.carousel-caption button {
-  margin: 10px
+.carousel-journal-entries {
+  width:100px;
 }
