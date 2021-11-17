@@ -14,7 +14,7 @@ class UpdateJournal extends React.Component {
     ev.preventDefault();
 
     const updatedObj = {
-      _id: this.props.updateJournal._id,
+      _id: this.props.updatedjournal._id,
       name: ev.target.journalName.value,
       description: ev.target.journalDescription.value,
       date: ev.target.journalDate.value,
@@ -28,6 +28,7 @@ class UpdateJournal extends React.Component {
   };
 
   render() {
+    console.log('this is updatedJournal props',this.props);
     return (
       <>
         <Modal show={this.props.showupdatejournal} onHide={this.handleClose} className="arrange-modal">

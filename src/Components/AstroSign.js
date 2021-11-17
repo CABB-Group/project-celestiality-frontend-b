@@ -1,6 +1,6 @@
 import React from "react";
 import { Accordion } from "react-bootstrap";
-import Col from "react-bootstrap/Col";
+// import Col from "react-bootstrap/Col";
 
 
 class AstroSign extends React.Component {
@@ -23,11 +23,11 @@ class AstroSign extends React.Component {
   }
 }
 
-class Sign extends React.Component {
-  render() {
-    const itemData = this.props.itemData;
-    return (<Col>{itemData}</Col>);
-  }
-}
+// class Sign extends React.Component {
+//   render() {
+//     const itemData = this.props.itemData;
+//     return (<Col>{itemData}</Col>);
+//   }
+// }
 
 export default AstroSign;

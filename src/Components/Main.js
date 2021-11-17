@@ -39,7 +39,8 @@ class Main extends React.Component {
                 showupdatejournal={this.props.showupdatejournal}
                 updatedjournal={this.props.updatedjournal} 
                 handleCreate={this.props.handleCreate} 
-                getJournals={this.props.getJournals} />}
+                getJournals={this.props.getJournals}
+                showUpdateModal={this.props.showUpdateModal} />}
       </>
 
 

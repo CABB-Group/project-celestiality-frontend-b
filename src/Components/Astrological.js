@@ -4,8 +4,8 @@ import ZodiacPicture from './ZodiacPicture.js';
 import AstroSign from './AstroSign.js';
 import HoroScope from './HoroScope.js';
 import HistoricalDates from './HistoricalDates.js';
-import Celebrity from './Celebrity.js';
-import ChineseZodiac from "./ChineseZodiac.js";
+// import Celebrity from './Celebrity.js';
+// import ChineseZodiac from "./ChineseZodiac.js";
 import JournalEntry from "./JournalEntry.js";
 import JournalEntries from './JournalEntries';
 import axios from 'axios';
@@ -57,9 +57,7 @@ class Astrological extends React.Component {
     }
   }
 
-  showUpdateModal = () => {
-    this.setState({ showupdatejournal: true })
-  }
+
 
   componentDidMount() {
     this.getInfo();
@@ -115,7 +113,7 @@ class Astrological extends React.Component {
           }
           {this.props.userInfo.journals ?
             <JournalEntries
-              showUpdateModal={this.showUpdateModal}
+            showUpdateModal={this.props.showUpdateModal}
               showupdatejournal={this.state.showupdatejournal}
               journals={this.props.journals}
               handleDelete={this.props.handleDelete}
@@ -125,7 +123,7 @@ class Astrological extends React.Component {
             <UpdateJournal
               showupdatejournal={this.props.showupdatejournal}
               updatedjournal={this.props.updatedjournal}
-            // handleUpdate={this.handleUpdate}
+            handleUpdate={this.props.handleUpdate}
             // showupdatejournal={this.state.showupdatejournal}
             // onClose={() => this.setState({
             //   showupdatejournal: false
