@@ -3,6 +3,7 @@ import { Navbar, NavItem } from "react-bootstrap";
 //import { withAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
 // import JournalEntries from "./JournalEntries";
+//feafewfaef
 import logo from '../Images/Celestiality-logo.png';
 
 class Header extends React.Component {
