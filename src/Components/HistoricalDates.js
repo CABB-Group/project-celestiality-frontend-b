@@ -1,6 +1,6 @@
 import React from 'react';
 import { Accordion } from 'react-bootstrap';
-import Col from "react-bootstrap/Col";
+// import Col from "react-bootstrap/Col";
 
 class HistoricalDates extends React.Component {
   render() {

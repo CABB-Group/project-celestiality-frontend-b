@@ -9,6 +9,7 @@ import AboutUs from './Components/AboutUs.js';
 import PastJournals from './Components/PastJournals';
 import axios from 'axios';
 import './App.css';
+// import UpdateJournal from './Components/UpdateJournal';
 
 
 class App extends React.Component {
@@ -84,34 +85,43 @@ class App extends React.Component {
   };
 
   handleUpdate = async (journalToUpdate) => {
-    console.log('handleUpadate response:' ,journalToUpdate)
-    const url = `${process.env.REACT_APP_SERVER}/journal/${journalToUpdate}`;
+    console.log('handleUpadate response:', journalToUpdate)
+    const url = `${process.env.REACT_APP_SERVER}/journal/${journalToUpdate._id}`;
     console.log('url in handleUpdate', url);
-    // try {
-    //   const res = await axios.put(url);
-    //   const updatedJournal = res.data;
-    //   this.setState({
-    //     updatedjournal: updatedJournal,
-    //     showupdatejournal: true,
-    //   });
+    try {
+      const res = await axios.put(url);
+      const updatedJournal = res.data;
+      console.log('this is updatedJournal: ', updatedJournal);
+      this.setState({
+        updatedjournal: updatedJournal,
+        showupdatejournal: true,
+      });
 
-    //   const copyState = this.state.journals;
-
-    //   copyState.forEach((journal, idx) => {
-    //     let journalArr = [];
-    //     if (journalToUpdate._id === journal._id) {
-    //       journalArr.push([idx, journal]);
-    //       copyState[idx] = journalToUpdate;
-    //       this.setState({
-    //         journals: copyState,
-    //       });
-    //     }
-    //   });
-    // }
-    // catch (e) {
-    //   console.log(e.message);
-    // }
+      let copyState = this.state.userInfo.journals;
+      console.log('this is copyState', copyState);
+      let journalArr = [];
+      copyState.forEach((journal, idx) => {
+        if (journalToUpdate._id === journal._id) {
+          journalArr.push(journalToUpdate);  
+        }
+        else{
+          journalArr.push(journal);
+        }
+      });
+      console.log('this is journalArr', journalArr);
+      let copyUser = this.state.userInfo
+      copyUser.journals = journalArr;
+      
+          this.setState({
+            userInfo: copyUser,
+            // showupdatejournal: false
+          });
+    }
+    catch (e) {
+      console.log(e.message);
+    }
   }
+
 
   getJournals = async () => {
     let getJournalsApi = await axios.get(`${process.env.REACT_APP_SERVER}/journal`)
@@ -126,7 +136,9 @@ class App extends React.Component {
       }
     })
   }
-
+  showUpdateModal = () => {
+    this.setState({ showupdatejournal: true })
+  }
 
   render() {
     console.log('App.js state: ', this.state);
@@ -139,7 +151,7 @@ class App extends React.Component {
           <Routes>
             <Route exact path="/" element={this.state.loginComplete ?
               <Main
-              
+
                 setBirthDay={this.setBirthDay}
                 userInfo={this.state.userInfo}
                 birthDateEntered={this.state.birthDateEntered}
@@ -149,7 +161,9 @@ class App extends React.Component {
                 showupdatejournal={this.state.showupdatejournal}
                 updatedjournal={this.state.updatedjournal}
                 handleCreate={this.handleCreate}
-                getJournals={this.getJournals} />
+                getJournals={this.getJournals} 
+                showUpdateModal={this.showUpdateModal}/>
+                
               : <Login loginHandler={this.loginHandler} />}>
             </Route>
             <Route path='/aboutus' element={

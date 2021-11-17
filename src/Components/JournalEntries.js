@@ -1,18 +1,21 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Button } from "react-bootstrap";
-import img from '../Images/celestial-background.jpg';
+// import img from '../Images/celestial-background.jpg';
 import '../CSS/JournalEntries.css';
 
 class JournalEntries extends React.Component {
 
-  updateJournal = () => {
-    this.props.handleUpdate(this.props.journals_id)
-    this.props.showUpdateModal()
+  updateJournal = (el) => {
+    console.log('this is el', el)
+    this.props.handleUpdate(el);
+    this.props.showUpdateModal();
+    // console.log(this.props.journals._id);
+
   }
 
   render() {
-    console.log(this.props.journals);
+    console.log(this.props);
     return (
       <>
         <Carousel className="carousel-journal-entries">
@@ -30,12 +33,12 @@ class JournalEntries extends React.Component {
               </Carousel.Caption>
               <Button
                 style={{ backgroundColor: '#534d41', border: '1px solid transparent' }}
-                onClick={this.updateJournal}>
+                onClick={()=>this.updateJournal(el)}>
                 Update
               </Button>
               <Button
                 style={{ backgroundColor: '#db2b39', border: '1px solid transparent', margin: '5px' }}
-                onClick={this.updateJournal}>
+                onClick={()=>this.props.handleDelete(el._id)}>
                 Delete
               </Button>
             </Carousel.Item>)}

@@ -1,7 +1,7 @@
 import React from 'react';
 import img from '../Images/brandonpic.jpg';
 import Figure from 'react-bootstrap/Figure';
-// import '../CSS/AboutUs.css';
+import '../CSS/AboutUs.css';
 
 class AboutUs extends React.Component {
   constructor(props) {
