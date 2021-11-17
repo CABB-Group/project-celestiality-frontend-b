@@ -64,7 +64,7 @@ class App extends React.Component {
     const response = await axios.post(server, journalInfo);
     const newJournal = response.data;
     const journals = [...this.state.userInfo.journals, newJournal];
-    this.setState({ journals: journals })
+    // this.setState({ journals: journals })
     this.getJournals();
   }
 

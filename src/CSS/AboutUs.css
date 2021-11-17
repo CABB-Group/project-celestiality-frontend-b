@@ -1,4 +1,4 @@
- /* .figure-img.img-fluid {
+.figure-img.img-fluid {
   border: 5px solid black;
   border-radius: 50%;
   margin-bottom: 50px;
@@ -20,80 +20,5 @@
   flex-wrap: wrap;
   margin: 20px;
   justify-content: space-between;
-} */
-
-section div {
-  display: inline-block;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 20px;
-  /* justify-content: space-between; */
 }
 
-section p {
-  font-family: 'Nanum Myeongjo';
-  width: 300px;
-  height:210px;
-  margin: 20px;
-  
-  font-size: 10px;
-}
-section {
-  width: 100%;
-}
-
-.brandon-bionca {
-  width: 120%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-
-.names h3{
-  margin: 20px;
-  font-size: 18px;
-  font-family: 'Nanum Myeongjo';
-}
-
-.qr-code{
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  text-decoration: none;
-  /* margin-left: -90px; */
-}
-
-.brandon, .bionca, .angela, .chris{
-  border: 5px solid black;
-  border-radius: 20px;
-  margin-bottom: 50px;
-  background-color:rgb(21, 11, 107) ;
-  padding: 10px;
-}
-
-.angela-chris {
-  width: 120%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-
-.profilePic {
-  /* border-radius: 50%; */
-  border: 3px solid black;
-  padding: 10px;
-}
-
-.figure {font-size: 10px;
-font-family: 'Nanum Myeongjo';
-color: black;
-letter-spacing: 1px;
-text-align: center;
-padding: 10px;
-margin:30px;} 
-
-.bio-pic {
-  float: left;
-}

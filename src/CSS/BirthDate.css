@@ -12,12 +12,7 @@
   margin-left: 360px;
 }
 
-div.modal-header{
-  color:rgb(38, 45, 145);
-}
-
 div.modal-title {
   font-size: 30px;
   font-family: 'Bad Script';
-  text-align: center;
 }
