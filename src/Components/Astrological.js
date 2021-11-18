@@ -86,7 +86,7 @@ class Astrological extends React.Component {
 
             </Col>
             
-              <h4>Historical Dates!</h4>
+              
               <HistoricalDates historydates={this.state.historydates} />
 
             
