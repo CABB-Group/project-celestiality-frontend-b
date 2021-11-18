@@ -12,7 +12,7 @@ import axios from 'axios';
 import UpdateJournal from "./UpdateJournal.js";
 import AddJournalButton from './AddJournalButton.js';
 import '../CSS/Astrological.css';
-import img from '../Images/zodiac-wheel.jpg';
+import img from '../Images/wheel.jpg';
 
 
 
