@@ -1,4 +1,5 @@
 import React from 'react';
+import '../CSS/ZodiacPicture.css';
 
 class ZodiacPicture extends React.Component {
   render() {

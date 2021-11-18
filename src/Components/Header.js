@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // import JournalEntries from "./JournalEntries";
 //feafewfaef
 import logo from '../Images/Celestiality-logo.png';
+import '../CSS/Header.css';
 
 class Header extends React.Component {
     constructor(props){
@@ -21,23 +22,25 @@ class Header extends React.Component {
       <Navbar
         collapseOnSelect
         expand="lg"
-        style={{ backgroundColor: "rgb(38, 45, 145)" }}
+        
       >
-        <Navbar.Brand style={{ backgroundColor: "rgb(38, 45, 145)" }}>
+        <Navbar.Brand >
+          <Link to="/" className="nav-link">
           <img src={logo} alt='logo' width="290px" height="36px"></img>
+          </Link>
         </Navbar.Brand>
-        <NavItem style={{ backgroundColor: "rgb(38, 45, 145)" }}>
+        <NavItem >
           <Link to="/" className="nav-link">
             Home
           </Link>
         </NavItem>
         
-        <NavItem style={{ backgroundColor: "rgb(38, 45, 145)" }}>
+        <NavItem>
           <Link to="/aboutus" className="nav-link">
             About Us
           </Link>
         </NavItem>
-        <NavItem style={{ backgroundColor: "rgb(38, 45, 145)" }}>
+        <NavItem>
           <Link to="/pastjournals" className="nav-link">
             Journal Entries
           </Link>

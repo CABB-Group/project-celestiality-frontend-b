@@ -10,7 +10,7 @@ class HistoricalDates extends React.Component {
           <Accordion.Header>Your Birthday Historical Facts!</Accordion.Header>
             {this.props.historydates.map((item, idx) => (
           <Accordion.Body key={idx}>
-              <h3 > {item.description} </h3>
+              <p > {item.description} </p>
               </Accordion.Body>
             ))}
         </Accordion.Item>

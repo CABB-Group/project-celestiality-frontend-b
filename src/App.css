@@ -38,17 +38,18 @@
 }
 
 body {
-  background-image: url("./Images/celestial-background.jpg");
+  background-image: url("./Images/MilkyWay.jpg");
   background-size: 100%, 50%;
   background-repeat: repeat-y;
 }
 
 div.card,
-#BirthDate,#updateModal,
+#updateModal,
 main {
   margin: 80px auto;
   opacity: 0.5px;
-  color: rgb(24, 38, 140);
+  border-color: aliceblue;
+  color: aliceblue;
   background-color: rgb(38, 45, 145);
   border-width: 10px;
   border-style: double solid solid double;
@@ -56,6 +57,19 @@ main {
   padding: 30px;
   border-radius: 10%;
 }
+#BirthDate{
+  margin: 80px auto;
+  opacity: 0.5px;
+  border-color: aliceblue;
+  color: rgb(28, 97, 156);
+  background-color: rgb(38, 45, 145);
+  border-width: 10px;
+  border-style: double solid solid double;
+  text-align: center;
+  padding: 30px;
+  border-radius: 10%;
+}
+
 
 nav.navbar.navbar-expand-lg.navbar-light {
   display: flex;
@@ -78,26 +92,41 @@ section {
 }
 
 .row {
-  width: 90%;
-  background-color: red;
+  width: 30%;
+  /* background-color: red; */
 }
 
 .col {
   width: 90%;
-  background-color: purple;
+  /* background-color: purple; */
   margin: 0px auto;
+}
+
+.accordion-collapse.collapse.show {
+  color: black;
+  max-width: 400px;
+  font-size: 20px;
+}
+
+
+h2 {
+  color: black;
 }
 
 #astrosign,
 #ZodiacPicture {
-  display: inline-block;
-  background-color: green;
-  width: 50%;
+  /* display: inline-block; */
+  /* background-color: green; */
+  /* width: 40%; */
+
+}
+btn.btn-secondary.btn-lg {
+  max-width: 100px;
 }
 
 #horosocpe {
-  margin: 0px auto;
-  padding: 0px auto;
+  /* margin: 0px auto;
+  padding: 0px auto; */
 }
 
 .journal-entry {
@@ -105,4 +134,14 @@ section {
   vertical-align: top;
   min-height: 300px;
   background-color: white;
+}
+
+div#astrosign.col {
+  /* max-width: 200px; */
+  padding: 0px;
+  margin: 0px;
+}
+
+.footer-img {
+  align-content: center;
 }

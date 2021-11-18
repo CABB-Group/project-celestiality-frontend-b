@@ -11,7 +11,7 @@ import JournalEntries from './JournalEntries';
 import axios from 'axios';
 import UpdateJournal from "./UpdateJournal.js";
 import AddJournalButton from './AddJournalButton.js';
-// import '../CSS/Astrological.css';
+import '../CSS/Astrological.css';
 
 
 
@@ -67,28 +67,28 @@ class Astrological extends React.Component {
     // console.log('astro props:', this.props.userInfo.journals);
     return (
       <main>
-        <h2>Welcome, {this.props.userInfo.username}</h2>
-        <section className="celestial" style={{ display: 'inline-block' }}>
-          <Col>
+        <h2>Welcome, {this.props.userInfo.username}!</h2>
+        <section className="celestial" style={{ width:'50%', display: 'inline-block' }}>
+          <Row>
 
-            <Row id="ZodiacPicture">
-              <h1>Zodiac Picture</h1>
+            <Col id="ZodiacPicture">
+              <h4>Zodiac Picture</h4>
               <ZodiacPicture zodiacpic={this.state.zodiacpic} />
 
-            </Row>
-            <Row id="astrosign">
+            </Col>
+            <Col id="astrosign">
               <AstroSign astrosign={this.state.astrosign} />
-            </Row>
+            </Col>
 
-            <Row id="horoscope">
+            <Col id="horoscope">
               <HoroScope horoscope={this.state.horoscope} />
 
-            </Row>
-            <Row>
-              <h1>Historical Dates!</h1>
+            </Col>
+            
+              <h4>Historical Dates!</h4>
               <HistoricalDates historydates={this.state.historydates} />
 
-            </Row>
+            
             <Row>
 
               {/* <ChineseZodiac chinesezod={this.state.chinesezod} /> */}
@@ -100,9 +100,9 @@ class Astrological extends React.Component {
               {/* <Celebrity celebrity={this.state.celebrity} /> */}
 
             </Row>
-          </Col>
+          </Row>
         </section>
-        <section className="journal-entry" style={{ display: 'inline-block' }}>
+        <section className="journal-entry" style={{ width:'50%',display: 'inline-block' }}>
 
           {this.state.showjournalentry ? (
             <JournalEntry

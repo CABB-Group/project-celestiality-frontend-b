@@ -7,10 +7,15 @@ h2 {
   color:lightcyan;
 }
 
-.celestial {
+section.celestial {
   /* margin-left: 10px; */
   align-items: center;
   display: flex;
+  
+}
+
+div.row {
+  background-color: rgb(38, 45, 145);
 }
 
 .journal-entry {
