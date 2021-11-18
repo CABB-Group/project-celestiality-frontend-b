@@ -6,28 +6,17 @@ import { Accordion } from "react-bootstrap";
 class AstroSign extends React.Component {
   render() {
     return (
-      <Accordion defaultActiveKey="0">
+      <Accordion defaultActiveKey="0" style={{margin:'50px auto 0px', marginLeft:'14px'}}>
         <Accordion.Item eventKey="0">
-          <Accordion.Header>Your Astrological Facts!</Accordion.Header>
-          <Accordion.Body>
-            <h2>{this.props.astrosign}</h2>
-            {/* {this.props.astrosign.map((item, idx) => (
-              <Sign key={item._id} itemData={item} />
-            ))} */}
+          <Accordion.Header style={{minWidth:'30rem'}}>Your Astrological Facts!</Accordion.Header>
+          <Accordion.Body style={{textAlign:'left', margin:'0px',padding:'0px'}}>
+            <h6 style={{textAlign:'left'}}>Your Zodiac Sign is : {this.props.astrosign}</h6>
 
-            {/* {Sign} */}
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
     );
   }
 }
-
-// class Sign extends React.Component {
-//   render() {
-//     const itemData = this.props.itemData;
-//     return (<Col>{itemData}</Col>);
-//   }
-// }
 
 export default AstroSign;
