@@ -49,7 +49,7 @@ main {
   margin: 80px auto;
   opacity: 0.5px;
   border-color: aliceblue;
-  color: aliceblue;
+  color: rgb(28, 94, 151);
   background-color: rgb(38, 45, 145);
   border-width: 10px;
   border-style: double solid solid double;
@@ -144,4 +144,16 @@ div#astrosign.col {
 
 .footer-img {
   align-content: center;
+}
+
+.row#ZodiacPicture.col h4{ 
+  text-align: center;
+}
+
+h6 {
+  color:rgb(38, 45, 145);
+}
+
+p {
+  color: rgb(38, 45, 145);
 }

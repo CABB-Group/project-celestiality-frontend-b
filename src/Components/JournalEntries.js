@@ -21,18 +21,20 @@ class JournalEntries extends React.Component {
     console.log('journal entries :',this.props);
     return (
       <>
-        <Carousel className="carousel-journal-entries">
+        <Carousel className="carousel-journal-entries" style={{minHeight: '20rem', minWidth:'30rem', color:'red', backgroundColor: 'transparent'}}>
           {this.props.journals.map((el) =>
             <Carousel.Item key={el._id}>
-              <img style={{ display: 'inline-block' }}
-                className='w-100 h-100'
+              <img style={{ display: 'inline-block',margin:'0px auto' }}
+                
+                className='d-block w-100'
                 src={img}
                 alt="First slide"
               />
               <Carousel.Caption style={{ color: 'black', backgroundColor: 'transparent' }}>
-                <h3 style={{ backgroundColor: 'transparent' }} >{el.name}</h3>
-                <p style={{ backgroundColor: 'transparent' }}>{el.date}</p>
-                <p style={{ backgroundColor: 'transparent' }}>{el.description}</p>
+                <h5 style={{ backgroundColor: 'transparent' }} >{el.name}</h5>
+                <div style={{ backgroundColor: 'transparent' }}>{el.date}</div>
+                <div style={{ backgroundColor: 'transparent' }}>{el.description}</div>
+                <br></br>
                 <Button
                 style={{ backgroundColor: '#534d41', border: '1px solid transparent' }}
                 onClick={()=>this.updateJournal(el)}>
