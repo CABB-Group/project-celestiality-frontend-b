@@ -18,9 +18,9 @@ class AboutUs extends React.Component {
   render() {
     return(
       <Figure className='figure'>
-      <section class="allBio">
-      <div class="brandon-bionca">
-        <div class="brandon">
+      <section className="allBio">
+      <div className="brandon-bionca">
+        <div className="brandon">
         
 
         <Figure.Image
@@ -30,12 +30,12 @@ class AboutUs extends React.Component {
         src={brandon}
         alt="brandonImage"
       />
-        <article class="names">
+        <article className="names">
       <Figure.Caption><h3>Brandon Mizutani ♓ </h3>
       <p>I am a student at Code Fellows. I recently moved from Los Angeles to Seattle, Washington. I went to school for and worked in T.V. post-production. I decided to change my career after having time to reflect what would challenge and motivate me. I had prior experience in HTML & CSS. While I did learn a few JavaScript functions in college, it has only been through Code Fellows that I have gained a greater understanding of it and so much more. Upon completing Code Fellows, I hope to attain a career as a software developer, working with like-minded individuals who have the same passion for coding.</p>
       </Figure.Caption></article></div>
 
-      <div class="bionca">
+      <div className="bionca">
           
           
         
@@ -46,14 +46,14 @@ class AboutUs extends React.Component {
         src={bionca}
         alt="bioncaImage"
       />
-        <article class="names">
+        <article className="names">
       <Figure.Caption><h3>Bionca Bond ♌</h3>
       <p>I am a Software Developer seeking to provide creative business solutions by using aspects of Javascript, React and other developer tools.</p>
       </Figure.Caption>
       </article></div></div>
 
-      <div class='angela-chris'>
-      <div class="angela">
+      <div className='angela-chris'>
+      <div className="angela">
           
 
         <Figure.Image
@@ -63,12 +63,12 @@ class AboutUs extends React.Component {
         src={angela}
         alt="angelaImage"
       />
-      <article class="names">  
+      <article className="names">  
       <Figure.Caption><h3>Angela Dzodzomenyo ♌ </h3>
       <p>Software Developer who loves a challenge and is always curious. Likes to code, tinker with electronics and play video games. I've learned throughout my work history the importance of communication, creativity and earnestness. I think those are some of my strong suits and I look forward to being part of a company that allows me to do some of the things that I do best.</p>
       </Figure.Caption></article></div>
       
-      <div class="chris">
+      <div className="chris">
 
         <Figure.Image
         className='bio-pic'
@@ -78,7 +78,7 @@ class AboutUs extends React.Component {
         alt="chrisImage"
       />
       
-        <article class="names">
+        <article className="names">
       <Figure.Caption><h3>Chris Reichert ♑ </h3>
       <p>An aspiring python software developer. I am formally a construction project manager, military officer, and helicopter pilot. I have my Project Management Professional (PMP) certification going on 3 years and over 12 years of leadership experience. I wanted to pivot sectors and my career to align more with my passion.
       

@@ -19,6 +19,7 @@ class App extends React.Component {
       loginComplete: false,
       birthDateEntered: false,
       showupdatejournal: false,
+      showthejournal: true,
       updatedjournal: "",
       userInfo: {
         username: '',
@@ -178,12 +179,18 @@ class App extends React.Component {
             </Route>
             <Route path='/pastjournals' element={
                 <PastJournals
+                  showUpdateModal={this.showUpdateModal}
                   handleDelete={this.handleDelete}
                   handleUpdate={this.handleUpdate}
                   journals={this.state.userInfo.journals}
                   showupdatejournal={this.state.showupdatejournal}
                   updatedjournal={this.state.updatedjournal}
-                  handleCreate={this.handleCreate} />} />
+                  handleCreate={this.handleCreate}
+                  pullUpdatedEntry={this.pullUpdatedEntry} 
+                  onClose={() => this.setState({
+                    showthejournal: false
+                  })}
+                  />} />
           </Routes>
 
           <Footer />

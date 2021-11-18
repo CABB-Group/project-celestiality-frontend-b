@@ -205,6 +205,15 @@ button.btn.btn-info.btn-lg {
   margin-left: 35px;
 }
 
-.PastJournals {
-  margin-left: 300px;
+div.modal-content {
+  background-color: rgb(38, 45, 145);
+
+}
+
+div.modal-title.h4 {
+  color: aliceblue;
+}
+
+label.form-label {
+  color: aliceblue;
 }
