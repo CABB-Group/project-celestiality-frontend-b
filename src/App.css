@@ -39,8 +39,8 @@
 
 body {
   background-image: url("./Images/MilkyWay.jpg");
-  background-size: 100%, 50%;
-  background-repeat: repeat-y;
+  background-size:120% 120%;
+  background-repeat: no-repeat;
 }
 
 div.card,
