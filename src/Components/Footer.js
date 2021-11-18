@@ -8,9 +8,10 @@ class Footer extends React.Component {
     render() {
         return (
             <footer>
-            <div style={{ backgroundColor: "rgb(38, 45, 145)" }}className="footer-logo" >
+            <div id="footer" style={{ backgroundColor: "rgb(38, 45, 145)" }}className="footer-logo" >
+            
             <Link to="/" className="nav-link">
-          <img src={logo} alt='logo' width="290px" height="36px" className="footer-img"></img>
+          <img src={logo} alt='logo' width="200px" height="42px" className="footer-img"></img>
           </Link>
             </div>
             </footer>

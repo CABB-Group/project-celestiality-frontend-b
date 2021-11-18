@@ -47,7 +47,7 @@ class AboutUs extends React.Component {
         alt="bioncaImage"
       />
         <article class="names">
-      <Figure.Caption><h3>Bionca Bond </h3>
+      <Figure.Caption><h3>Bionca Bond ♌</h3>
       <p>I am a Software Developer seeking to provide creative business solutions by using aspects of Javascript, React and other developer tools.</p>
       </Figure.Caption>
       </article></div></div>

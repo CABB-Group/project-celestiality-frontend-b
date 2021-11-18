@@ -16,13 +16,15 @@ section.celestial {
 
 div.row {
   background-color: rgb(38, 45, 145);
+
 }
 
 .journal-entry {
   align-items: center;
   display: flex;
+  margin-top: 20px;
 }
 
-#text {
-  font-size: 20px;
+div.carousel-journal-entries.carousel.slide {
+  margin-left: 0px;
 }
