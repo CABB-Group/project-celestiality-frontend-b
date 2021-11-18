@@ -9,7 +9,7 @@ export default class LoginButton extends Component {
 
     /* TODO: Render a button with label 'Log In'. When the button is clicked then show LoginForm instead */
     return (
-      <Button variant="secondary" size="lg"
+      <Button variant="primary" size="lg"
         onClick={this.props.onButtonClick}>
         Log In
       </Button>
