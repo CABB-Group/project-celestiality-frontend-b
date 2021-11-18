@@ -36,3 +36,184 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-image: url("./Images/MilkyWay.jpg");
+  background-size:120% 120%;
+  background-repeat: no-repeat;
+  font-family: 'Nanum Myeongjo';
+}
+
+div.card,
+#updateModal,
+main {
+  margin: 80px auto;
+  opacity: 0.5px;
+  border-color: aliceblue;
+  color: rgb(28, 94, 151);
+  background-color: rgb(38, 45, 145);
+  border-width: 10px;
+  border-style: double solid solid double;
+  text-align: center;
+  padding: 30px;
+  border-radius: 10%;
+  font-family: 'Nanum Myeongjo';
+}
+#BirthDate{
+  margin: 80px auto;
+  opacity: 0.5px;
+  border-color: aliceblue;
+  color: rgb(28, 97, 156);
+  background-color: rgb(38, 45, 145);
+  border-width: 10px;
+  border-style: double solid solid double;
+  text-align: center;
+  padding: 30px;
+  border-radius: 10%;
+}
+
+
+nav.navbar.navbar-expand-lg.navbar-light {
+  display: flex;
+  padding: 20px;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
+
+h1 {
+  margin-top: 200px;
+  text-align: center;
+}
+
+a.nav-link {
+  color: antiquewhite;
+}
+
+section {
+  width: 50%;
+}
+
+.row {
+  width: 30%;
+  /* background-color: red; */
+}
+
+.col {
+  width: 90%;
+  /* background-color: purple; */
+  margin: 0px auto;
+}
+
+.accordion-collapse.collapse.show {
+  color: black;
+  max-width: 400px;
+  font-size: 20px;
+}
+
+
+h2 {
+  color: black;
+}
+
+#astrosign,
+#ZodiacPicture {
+  display: inline-block;
+  align-items: center;
+  width: 100%;
+
+}
+btn.btn-secondary.btn-lg {
+  max-width: 100px;
+}
+
+#horosocpe {
+  /* margin: 0px auto;
+  padding: 0px auto; */
+}
+
+.journal-entry {
+  height: 100%;
+  vertical-align: top;
+  min-height: 300px;
+  background-color: white;
+}
+
+div#astrosign.col {
+  /* max-width: 200px; */
+  padding: 0px;
+  margin: 0px;
+}
+
+
+
+.row#ZodiacPicture.col h4{ 
+  text-align: center;
+}
+
+h6 {
+  color:rgb(38, 45, 145);
+}
+
+p {
+  color: rgb(38, 45, 145);
+}
+
+div.modal-title.h4 {
+  color:rgb(38, 45, 145);
+}
+
+label.form-label {
+  color: rgb(38, 45, 145);
+}
+
+.footer-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+h3 {
+  text-align: center;
+}
+
+.zod-picture {
+  display: block;
+  margin-left: 150px;
+  width: 200%;
+  align-items: center;
+  text-align: center;
+  margin-bottom: -20px;
+  margin-top: 40px;
+  
+}
+
+.zod-pic {
+  border:3px double aliceblue;
+}
+
+.zod-pic-title {
+  font-size: 20px;
+  
+}
+
+section.celestial {
+  margin-top: 20px;
+}
+
+button.btn.btn-info.btn-lg {
+  margin-left: 35px;
+}
+
+div.modal-content {
+  background-color: rgb(38, 45, 145);
+
+}
+
+div.modal-title.h4 {
+  color: aliceblue;
+}
+
+label.form-label {
+  color: aliceblue;
+}

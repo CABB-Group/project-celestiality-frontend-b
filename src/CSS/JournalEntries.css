@@ -1,0 +1,28 @@
+.d-block  {
+  /* max-height: 500px; */
+  max-width: 300px;
+  padding: 20px;
+}
+
+.carousel-caption button {
+  margin: 10px
+}
+
+h5 {
+  color:aliceblue;
+}
+
+div {
+  color: aliceblue;
+}
+
+div.carousel-journal-entries.carousel.slide {
+  width: 200px;
+  height: 300px;
+  
+  
+}
+
+img.w-100 {
+  border-radius: 80%;
+}

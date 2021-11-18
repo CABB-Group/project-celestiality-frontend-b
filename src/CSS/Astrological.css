@@ -1,0 +1,30 @@
+.accordion .row {
+  /* margin-left: 20px; */
+  align-items: center;
+}
+
+h2 {
+  color:lightcyan;
+}
+
+section.celestial {
+  /* margin-left: 10px; */
+  align-items: center;
+  display: flex;
+  
+}
+
+div.row {
+  background-color: rgb(38, 45, 145);
+
+}
+
+.journal-entry {
+  align-items: center;
+  display: flex;
+  margin-top: 20px;
+}
+
+div.carousel-journal-entries.carousel.slide {
+  margin-left: 0px;
+}
