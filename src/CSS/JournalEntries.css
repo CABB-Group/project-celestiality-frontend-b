@@ -19,9 +19,10 @@ div {
 div.carousel-journal-entries.carousel.slide {
   width: 200px;
   height: 300px;
-
+  
+  
 }
 
-img.d-block.w-100 {
-  width:300px;
+img.w-100 {
+  border-radius: 80%;
 }

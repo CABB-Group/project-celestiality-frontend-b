@@ -3,7 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 import { Button } from "react-bootstrap";
 // import img from '../Images/celestial-background.jpg';
 import '../CSS/JournalEntries.css';
-import img from '../Images/unnamed.jpg';
+import img from '../Images/celestial-background.jpg';
 
 class JournalEntries extends React.Component {
 
@@ -21,11 +21,10 @@ class JournalEntries extends React.Component {
     console.log('journal entries :',this.props);
     return (
       <>
-        <Carousel className="carousel-journal-entries" style={{minHeight: '26rem', minWidth:'29rem', color:'red', backgroundColor: 'transparent'}}>
+        <Carousel className="carousel-journal-entries" style={{minHeight: '23rem', minWidth:'29rem', color:'red', backgroundColor: 'transparent'}}>
           {this.props.journals.map((el) =>
             <Carousel.Item key={el._id}>
               <img style={{ display: 'inline-block',margin:'0px auto' }}
-                
                 className='w-100'
                 src={img}
                 alt="First slide"
