@@ -1,7 +1,34 @@
+h3 {
+  color:rgb(38, 45, 145);
+  font-size: 10px;
+  text-align: center;
 
+}
+
+div.journal-entry{
+  background-color: rgb(95, 103, 218);
+text-align: center;
+border-style: double dotted;
+}
+
+input#formBasicName.form-control {
+  width: 102.7px;
+  font-size: 12px;
+}
+
+input#formDate.form-control {
+  width: 140px;
+  font-size: 12px;
+}
+
+input#formDescription.form-control {
+  width:280px;
+  font-size: 12px;
+  height:200px;
+}
 
 section.journal-entry{
-  color:aliceblue;
+  color:black;
   background-color: blue;
 
   

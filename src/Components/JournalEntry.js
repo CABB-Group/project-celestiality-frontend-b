@@ -28,7 +28,7 @@ class JournalEntry extends React.Component {
   render() {
     return (
       <div class="journal-entry">
-        <h1>this is journalEntry</h1>
+        <h3>Your Journal Entry</h3>
         <Form handleSubmit={this.props.handleCreate}>
           {/* <Form.Title>Your Journal Entry!</Form.Title> */}
 

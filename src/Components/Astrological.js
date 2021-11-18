@@ -12,6 +12,7 @@ import axios from 'axios';
 import UpdateJournal from "./UpdateJournal.js";
 import AddJournalButton from './AddJournalButton.js';
 import '../CSS/Astrological.css';
+import img from '../Images/pisces-zodi.jpg';
 
 
 
@@ -25,7 +26,7 @@ class Astrological extends React.Component {
       celebrity: [],
       historydates: [],
       chinesezod: [],
-      zodiacpic: 'https://via.placeholder.com/150',
+      zodiacpic: {},
       showjournalentry: false,
       showupdatejournal: true,
       updatedjournal: "",
@@ -73,7 +74,7 @@ class Astrological extends React.Component {
 
             <Col id="ZodiacPicture">
               <h4>Zodiac Picture</h4>
-              <ZodiacPicture zodiacpic={this.state.zodiacpic} />
+              <ZodiacPicture zodiacpic={img} />
 
             </Col>
             <Col id="astrosign">
