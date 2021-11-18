@@ -58,7 +58,7 @@ class JournalEntry extends React.Component {
               }
             />
           </Form.Group>
-
+          <br></br>
           <Button
             variant="primary"
             type="submit"
@@ -66,6 +66,7 @@ class JournalEntry extends React.Component {
           >
             Submit
           </Button>
+          
         </Form>
       </div>
     );

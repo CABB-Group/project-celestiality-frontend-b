@@ -4,7 +4,7 @@ import '../CSS/ZodiacPicture.css';
 class ZodiacPicture extends React.Component {
   render() {
     return (
-        <img src={this.props.zodiacpic} alt={this.props.zodiacpic} width="150px" height="150px"></img>
+        <img src={this.props.zodiacpic} alt={this.props.zodiacpic} width="200px" height="200px" className="zod-pic"></img>
     )
   }
 };

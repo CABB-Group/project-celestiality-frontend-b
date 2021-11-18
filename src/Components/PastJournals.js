@@ -1,5 +1,6 @@
 import React from 'react';
 import JournalEntries from './JournalEntries';
+import '../CSS/PastJournals.css';
 
 
 class PastJournals extends React.Component {

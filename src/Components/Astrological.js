@@ -72,11 +72,11 @@ class Astrological extends React.Component {
         <section className="celestial" style={{ width:'50%', display: 'inline-block' }}>
           <Row>
 
-            <Col id="ZodiacPicture">
-              <h4>Zodiac Picture</h4>
+            <div className="zod-picture">
+              {/* <div className="zod-pic-title">Zodiac Picture</div> */}
               <ZodiacPicture zodiacpic={img} />
-
-            </Col>
+            </div>
+            
             <Col id="astrosign">
               <AstroSign astrosign={this.state.astrosign} />
             </Col>

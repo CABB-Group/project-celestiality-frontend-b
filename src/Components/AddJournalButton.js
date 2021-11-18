@@ -8,7 +8,7 @@ export default class AddJournalButton extends Component {
   render() {
 
     return (
-      <Button variant="secondary" size="lg"
+      <Button variant="info" size="lg"
         onClick={this.props.onButtonClick}>
         Create a Journal Submission
       </Button>
