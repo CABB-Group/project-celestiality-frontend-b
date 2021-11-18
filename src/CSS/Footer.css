@@ -2,3 +2,6 @@ img {
   align-items: center;
   justify-content: center;
 }
+
+.footer-bg-img {
+  background-image: url("../Images/MilkyWay.jpg")}
