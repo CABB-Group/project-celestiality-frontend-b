@@ -8,6 +8,7 @@ class JournalEntries extends React.Component {
 
   updateJournal = (el) => {
     console.log('this is el', el)
+    // this.props.pullUpdatedEntry(el);
     this.props.handleUpdate(el);
     this.props.showUpdateModal();
     // console.log(this.props.journals._id);
@@ -15,7 +16,7 @@ class JournalEntries extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log('journal entries :',this.props);
     return (
       <>
         <Carousel className="carousel-journal-entries">
@@ -34,7 +35,7 @@ class JournalEntries extends React.Component {
               <Button
                 style={{ backgroundColor: '#534d41', border: '1px solid transparent' }}
                 onClick={()=>this.updateJournal(el)}>
-                Update
+                Upd
               </Button>
               <Button
                 style={{ backgroundColor: '#db2b39', border: '1px solid transparent', margin: '5px' }}

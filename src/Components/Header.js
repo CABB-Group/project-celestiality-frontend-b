@@ -4,6 +4,9 @@ import { Navbar, NavItem } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 // import JournalEntries from "./JournalEntries";
 
+import logo from '../Images/Celestiality-logo.png';
+
+
 class Header extends React.Component {
     constructor(props){
         super(props);
