@@ -176,16 +176,14 @@ class App extends React.Component {
               <AboutUs />
             }>
             </Route>
-            <Route path='/pastjournals' element={this.state.showupdatejournal
-              ? <h3>There are no Journals here! </h3> : (
+            <Route path='/pastjournals' element={
                 <PastJournals
                   handleDelete={this.handleDelete}
                   handleUpdate={this.handleUpdate}
                   journals={this.state.userInfo.journals}
                   showupdatejournal={this.state.showupdatejournal}
                   updatedjournal={this.state.updatedjournal}
-                  handleCreate={this.handleCreate} />)
-            } />
+                  handleCreate={this.handleCreate} />} />
           </Routes>
 
           <Footer />

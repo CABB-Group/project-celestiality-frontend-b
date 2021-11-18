@@ -4,11 +4,12 @@ import JournalEntries from './JournalEntries';
 
 class PastJournals extends React.Component {
   render() {
+    console.log('this is props',this.props);
     return (
       <>
-      {this.props.showupdatejournal ? <h3>There are no saved Journals</h3> :
-      <JournalEntries handleDelete={this.props.handleDelete} handleUpdate={this.props.handleUpdate} journals={this.props.journals}showupdatejournal={this.props.showupdatejournal}
-      updatedjournal={this.props.updatedjournal}/> }
+      {this.props.journals.length >0 ? <JournalEntries handleDelete={this.props.handleDelete} handleUpdate={this.props.handleUpdate} journals={this.props.journals}showupdatejournal={this.props.showupdatejournal}
+      updatedjournal={this.props.updatedjournal}/> :<h3>There are no saved Journals</h3>
+       }
       </>
     )
   }

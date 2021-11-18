@@ -27,9 +27,9 @@ class JournalEntry extends React.Component {
 
   render() {
     return (
-      <div class="journal-entry">
-        <h1>this is journalEntry</h1>
-        <Form handleSubmit={this.props.handleCreate}>
+      <div className="journal-entry">
+        <h3>Your Journal Entry</h3>
+        <Form onSubmit={this.handleSubmit}>
           {/* <Form.Title>Your Journal Entry!</Form.Title> */}
 
           <Form.Group className="mb-3" controlId="formBasicName">
@@ -62,7 +62,7 @@ class JournalEntry extends React.Component {
           <Button
             variant="primary"
             type="submit"
-            onClick={(event) => this.handleSubmit(event)}
+            
           >
             Submit
           </Button>

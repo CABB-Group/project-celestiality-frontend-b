@@ -7,3 +7,13 @@
 .carousel-caption button {
   margin: 10px
 }
+
+div.carousel-journal-entries.carousel.slide {
+  width: 200px;
+  height: 300px;
+
+}
+
+img.d-block.w-100 {
+  width:200px;
+}

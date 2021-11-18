@@ -10,8 +10,10 @@ class HistoricalDates extends React.Component {
         <Accordion.Item eventKey="0" style={{minWidth:'30rem', margin:'0px auto'}}>
           <Accordion.Header>On your Birthdate:</Accordion.Header>
             {this.props.historydates.map((item, idx) => (
+
           <Accordion.Body key={idx} style={{textAlign:'left', margin:'0px',padding:'0px'}}>
               <p style={{maxHeight:'.5rem', margin:'0px',fontSize:'.7rem'}}>In the year {item.year}: {item.description} </p>
+
               </Accordion.Body>
             ))}
         </Accordion.Item>
