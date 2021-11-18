@@ -1,7 +1,10 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+
 import "../CSS/JournalEntry.css";
+
+// import '../CSS/JournalEntries.css';
 
 class JournalEntry extends React.Component {
   constructor(props) {
@@ -27,18 +30,22 @@ class JournalEntry extends React.Component {
 
   render() {
     return (
+
       <div class="journal-entry">
         <h1>this is journalEntry</h1>
+
         <Form handleSubmit={this.props.handleCreate}>
           {/* <Form.Title>Your Journal Entry!</Form.Title> */}
 
           <Form.Group className="mb-3" controlId="formBasicName">
+
             <Form.Label>Title</Form.Label>
             <Form.Control
               type="name"
               placeholder="Enter Name"
               onChange={(event) => this.setState({ name: event.target.value })}
             />
+
           </Form.Group>
           <Form.Group className="mb-3" controlId="formDate">
             <Form.Label>Date</Form.Label>
@@ -67,7 +74,7 @@ class JournalEntry extends React.Component {
             Submit
           </Button>
         </Form>
-      </div>
+      </>
     );
   }
 }
