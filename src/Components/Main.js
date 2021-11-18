@@ -1,38 +1,54 @@
 import React from "react";
-// import { Col, Row } from "react-bootstrap";
 import Astrological from "./Astrological.js";
-import JournalEntry from './JournalEntry.js';
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Col, Row } from 'react-bootstrap';
+import BirthDate from '../LoginComponents/BirthDate.js';
+
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      journalentry: {},
-      journalentries: [],
+      showmodal: true,
     };
   }
+
+  changeBirthdayModal = (element) => {
+    // console.log('Main handle submit: ', element);
+    // e.preventDefault();
+    this.setState({
+      showmodal: element
+    })
+  }
+
+
   render() {
+      console.log('main props:', this.props);
     return (
       <>
-
-        <Col>
-          <Row>
-            <Astrological username={this.state.username} />
-          </Row>
-        </Col>
-        <Col> 
-          <Row>
-            <JournalEntry username={this.state.username} journalentry={this.state.journalentry} />
-          </Row>
-        </Col>
-
+        
+         
+            {this.state.showmodal ?
+              <BirthDate
+                changeBirthdayModal={this.changeBirthdayModal}
+                showModal={this.state.showmodal}
+                setBirthDay={this.props.setBirthDay} />
+              : <Astrological
+                userInfo={this.props.userInfo} 
+                handleDelete={this.props.handleDelete} 
+                handleUpdate={this.props.handleUpdate} 
+                journals={this.props.journals} 
+                showupdatejournal={this.props.showupdatejournal}
+                updatedjournal={this.props.updatedjournal} 
+                handleCreate={this.props.handleCreate} 
+                getJournals={this.props.getJournals}
+                showUpdateModal={this.props.showUpdateModal}
+                pullUpdatedEntry={this.props.pullUpdatedEntry} />}
       </>
 
 
     );
   }
 }
+
+// (<JournalEntry username={this.state.username} journalentry={this.state.journalentry} />)}
+
 export default Main;

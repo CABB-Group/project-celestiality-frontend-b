@@ -36,3 +36,73 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-image: url("./Images/celestial-background.jpg");
+  background-size: 100%, 50%;
+  background-repeat: repeat-y;
+}
+
+div.card,
+#BirthDate,
+main {
+  margin: 80px auto;
+  opacity: 0.5px;
+  color: lightcyan;
+  background-color: rgb(38, 45, 145);
+  border-width: 10px;
+  border-style: double solid solid double;
+  text-align: center;
+  padding: 30px;
+  border-radius: 10%;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light {
+  display: flex;
+  padding: 20px;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
+
+h1 {
+  margin-top: 200px;
+  text-align: center;
+}
+
+a.nav-link {
+  color: antiquewhite;
+}
+
+section {
+  width: 50%;
+}
+
+.row {
+  width: 90%;
+  background-color: red;
+}
+
+.col {
+  width: 90%;
+  background-color: purple;
+  margin: 0px auto;
+}
+
+#astrosign,
+#ZodiacPicture {
+  display: inline-block;
+  background-color: green;
+  width: 50%;
+}
+
+#horosocpe {
+  margin: 0px auto;
+  padding: 0px auto;
+}
+
+.journal-entry {
+  height: 100%;
+  vertical-align: top;
+  min-height: 300px;
+  background-color: white;
+}

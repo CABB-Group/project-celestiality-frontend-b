@@ -2,10 +2,23 @@ import React from "react";
 import { Navbar, NavItem } from "react-bootstrap";
 //import { withAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
+// import JournalEntries from "./JournalEntries";
+
+import logo from '../Images/Celestiality-logo.png';
+
 
 class Header extends React.Component {
+    constructor(props){
+        super(props);
+        this.state= {
+            showjournalentries: false
+        }
+    }
+
+
   render() {
     return (
+      <header>
       <Navbar
         collapseOnSelect
         expand="lg"
@@ -26,12 +39,13 @@ class Header extends React.Component {
           </Link>
         </NavItem>
         <NavItem style={{ backgroundColor: "#f3a712" }}>
-          <Link to="/journalentries" className="nav-link">
+          <Link to="/pastjournals" className="nav-link">
             Journal Entries
           </Link>
         </NavItem>
 
       </Navbar>
+      </header>
     );
   }
 }
