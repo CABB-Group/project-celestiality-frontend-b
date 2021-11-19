@@ -1,7 +1,7 @@
 import React from 'react';
 import JournalEntries from './JournalEntries';
 import '../CSS/PastJournals.css';
-import UpdateJournal from './UpdateJournal.js';
+// import UpdateJournal from './UpdateJournal.js';
 
 
 class PastJournals extends React.Component {
@@ -19,15 +19,15 @@ class PastJournals extends React.Component {
         handleUpdate={this.props.handleUpdate}
         pullUpdatedEntry={this.props.pullUpdatedEntry}/> :<h3>There are no saved Journals</h3>
        }
-       {this.props.showupdatejournal ?
+       {/* {this.props.showupdatejournal ?
             <UpdateJournal
               showupdatejournal={this.props.showupdatejournal}
               updatedjournal={this.props.updatedjournal}
             handleUpdate={this.props.handleUpdate}
             handleClose ={()=> {this.props.onClose()}}
-            // showupdatejournal={this.state.showupdatejournal}
             
-            /> : ''}
+            
+            /> : ''} */}
       </>
     )
   }

@@ -185,11 +185,12 @@ h3 {
   text-align: center;
   margin-bottom: -20px;
   margin-top: 40px;
-  
+
 }
 
 .zod-pic {
   border:3px double aliceblue;
+  border-radius: 35%;
 }
 
 .zod-pic-title {
