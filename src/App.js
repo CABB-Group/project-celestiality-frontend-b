@@ -187,9 +187,9 @@ class App extends React.Component {
                   updatedjournal={this.state.updatedjournal}
                   handleCreate={this.handleCreate}
                   pullUpdatedEntry={this.pullUpdatedEntry} 
-                  onClose={() => this.setState({
-                    showthejournal: false
-                  })}
+                  // onClose={() => this.setState({
+                  //   showthejournal: false
+                  // })}
                   />} />
           </Routes>
 
